@@ -106,7 +106,8 @@ print(listOfSymbols)"""
 
 # import yfinance as yf
 # stock_info = {}
-
+# stock_info["AAQC"] = yf.Ticker("AAQC").info
+# stock_info["AAQC"] = {"open_price": yf.Ticker("AAQC").info['open']}
 # stock_info["MSFT"] = {"currentPrice": yf.Ticker("MSFT").info["currentPrice"]}
 # print(stock_info)
 # print(yf.Ticker("MSFT").info)
@@ -194,3 +195,34 @@ print(listOfSymbols)"""
 #     print('True')
 #
 # print(datetime.datetime.now(tz).strftime('%Y-%m-%d'))
+
+# from tqdm import tqdm
+# from time import sleep
+#
+# for i in tqdm(range(100)):
+#     sleep(0.02)
+
+# example_dict = {'A': 1, 'B': 2}
+# additions = {'A': 1, 'B': 2, 'C': 3}
+#
+# for item in additions:
+#     if item in example_dict:
+#         example_dict[item] += additions[item]
+#     else:
+#         example_dict[item] = additions[item]
+#
+# print(example_dict)
+
+import csv
+
+d = {}
+with open('current_positions.csv', 'r', newline='') as f:
+    reader = csv.reader(f, delimiter=',')
+    next(reader)  # toss headers
+    for ticker, shares, value in reader:
+        if ticker == 'Cash':
+            d[ticker] = float(value)
+        else:
+            d[ticker] = float(shares)
+
+print(d)

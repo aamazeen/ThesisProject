@@ -3,6 +3,7 @@ from time import *
 from stocks import *
 from os import path
 from stocksymbol import StockSymbol
+from tqdm import tqdm
 import yfinance as yf
 import csv
 import schedule
@@ -14,7 +15,18 @@ import holidays
 market_open = False	    # beginning value of False to be tested daily
 # stock_tickers = []    # list of ticker symbols updated daily
 list_of_stocks = []	    # list of Stock objects containing information on every stock that will be tested
-current_positions = {'Cash': 100000}   # starting amount of $100,000, adding tickers when purchased
+current_positions = {}
+if not path.isfile('current_positions.csv'):
+    current_positions = {'Cash': 100000}  # starting amount of $100,000, adding tickers when purchased
+else:
+    with open('current_positions.csv', 'r', newline='') as f:
+        reader = csv.reader(f, delimiter=',')
+        next(reader)  # toss headers
+        for ticker, shares, value in reader:
+            if ticker == 'Cash':
+                current_positions[ticker] = float(value)
+            else:
+                current_positions[ticker] = float(shares)   # load dictionary with existing positions
 tz = pytz.timezone('US/Eastern')    # timezone used for determining market open status
 us_holidays = holidays.country_holidays('US')   # list of holidays used for determining market open status
 # TODO: defining global variables
@@ -73,8 +85,11 @@ def daily_steps():  # we will cycle through this one every day
 # TODO: change this into actual code
 def execute_orders(temp_stock_data, trade_decisions):
     global current_positions
-    for item in trade_decisions:
-        current_positions[item] += trade_decisions[item]
+    for item in tqdm(trade_decisions, desc='Execute Orders'):
+        if item in current_positions:
+            current_positions[item] += trade_decisions[item]
+        else:
+            current_positions[item] = trade_decisions[item]
         current_positions['Cash'] -= trade_decisions[item] * temp_stock_data[item]['current_price']
         # add or subtract the number of shares from current_positions
         # add or subtract the amount of cash from current_positions
@@ -86,7 +101,6 @@ def execute_orders(temp_stock_data, trade_decisions):
                 write_csv.writerow(['DateTime', 'Ticker', 'Old Balance', 'Transaction Amount', 'New Balance'])
         with open('transactions.csv', 'a', newline='') as fp:
             write_csv = csv.writer(fp)
-            # TODO: figure out how to pull the information for this .csv file
             write_csv.writerow([datetime.datetime.now(tz).strftime('%Y-%m-%d'),
                                 item,
                                 (current_positions[item] * temp_stock_data[item]['current_price']) -
@@ -97,13 +111,38 @@ def execute_orders(temp_stock_data, trade_decisions):
 
 # TODO: change this to pull the actual data needed for algorithms
 def fetch_stock_data(stock_ticker_list):
+    # print(len(stock_ticker_list))
+    # counter1 = 1
+    # counter2 = 1
     stock_data = {}
-    for item in stock_ticker_list:
-        stock_data[item] = {'open_price': yf.Ticker(item).info['open'],
-                            'current_price': yf.Ticker(item).info['currentPrice'],
-                            'year_high': yf.Ticker(item).info['fiftyTwoWeekHigh'],
-                            'year_low': yf.Ticker(item).info['fiftyTwoWeekLow'],
-                            'company_name': yf.Ticker(item).info['shortName']}
+    # error_tickers = []
+    for item in tqdm(stock_ticker_list, desc='Fetch Data'):
+        try:
+            temp_data = yf.Ticker(item).info
+            stock_data[item] = {'open_price': temp_data['open'],
+                                'current_price': temp_data['currentPrice'],
+                                'year_high': temp_data['fiftyTwoWeekHigh'],
+                                'year_low': temp_data['fiftyTwoWeekLow'],
+                                'company_name': temp_data['shortName']}
+            # counter2 += 1
+        except:
+            pass
+            # print(item + ' raised an error')
+    #         error_tickers.append(item)
+    #     print(f"{counter1 / len(stock_ticker_list): .2%}")
+    #     counter1 += 1
+    # print(error_tickers)
+    # print(counter2)
+    with open('stock_data.csv', 'w', newline='') as fp:
+        write_csv = csv.writer(fp)
+        write_csv.writerow(['ticker', 'open_price', 'current_price', 'year_high', 'year_low', 'company_name'])
+        for key in stock_data:
+            write_csv.writerow([key,
+                                stock_data[key]['open_price'],
+                                stock_data[key]['current_price'],
+                                stock_data[key]['year_high'],
+                                stock_data[key]['year_low'],
+                                stock_data[key]['company_name']])
     return stock_data
 
 
@@ -128,6 +167,10 @@ def is_market_open():
     now = datetime.datetime.now(tz)
     open_time = datetime.time(hour=9, minute=30, second=0)
     close_time = datetime.time(hour=16, minute=0, second=0)
+    # Override for testing
+    override_request = input('Override market_open (t/f)? ')
+    if override_request == 't':
+        return True
     # If a holiday
     if now.strftime('%Y-%m-%d') in us_holidays:
         return False
@@ -161,6 +204,8 @@ def to_sell_or_not_to_sell(temp_stock_data):
     for item in current_positions:
         if item == 'Cash':
             continue
+        elif item not in temp_stock_data:
+            print(item + ' is not listed in temp_stock_data')
         # TODO: this is financial decision making for Sell
         elif temp_stock_data[item]['current_price'] < 50:
             if current_positions[item] > 1:
@@ -175,10 +220,10 @@ def to_sell_or_not_to_sell(temp_stock_data):
 def update_stock_values(stock_data):
     global list_of_stocks
     for item in list_of_stocks:
-        item.open_price = stock_data[item]['open_price']
-        item.current_price = stock_data[item]['current_price']
-        item.year_high = stock_data[item]['year_high']
-        item.year_low = stock_data[item]['year_low']
+        item.open_price = stock_data[item.ticker]['open_price']
+        item.current_price = stock_data[item.ticker]['current_price']
+        item.year_high = stock_data[item.ticker]['year_high']
+        item.year_low = stock_data[item.ticker]['year_low']
 
 
 def update_ticker_list():
