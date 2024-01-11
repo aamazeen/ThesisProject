@@ -213,16 +213,53 @@ print(listOfSymbols)"""
 #
 # print(example_dict)
 
-import csv
+# import csv
+#
+# d = {}
+# with open('current_positions.csv', 'r', newline='') as f:
+#     reader = csv.reader(f, delimiter=',')
+#     next(reader)  # toss headers
+#     for ticker, shares, value in reader:
+#         if ticker == 'Cash':
+#             d[ticker] = float(value)
+#         else:
+#             d[ticker] = float(shares)
+#
+# print(d)
 
-d = {}
-with open('current_positions.csv', 'r', newline='') as f:
-    reader = csv.reader(f, delimiter=',')
-    next(reader)  # toss headers
-    for ticker, shares, value in reader:
-        if ticker == 'Cash':
-            d[ticker] = float(value)
-        else:
-            d[ticker] = float(shares)
+import pandas as pd
+import numpy as np
+from pypfopt.efficient_frontier import EfficientFrontier
+from pypfopt import risk_models
+from pypfopt import expected_returns
 
-print(d)
+# Generating random stock names for demonstration purposes
+np.random.seed(123)
+num_stocks = 5
+stocks = ['Stock_' + str(i) for i in range(1, num_stocks+1)]
+
+# Creating random returns data for stocks
+num_obs = 1000
+np.random.seed(456)
+stock_returns = np.random.rand(num_obs, num_stocks)  # Random returns data
+dates = pd.date_range(start='1/1/2020', periods=num_obs, freq='D')
+returns_df = pd.DataFrame(stock_returns, columns=stocks, index=dates)
+
+# Displaying the randomly generated returns data
+print("\nRandomly generated returns data for demonstration purposes:")
+print(returns_df.head())
+
+# Calculate expected returns and sample covariance matrix
+mu = expected_returns.mean_historical_return(returns_df)
+Sigma = risk_models.sample_cov(returns_df)
+
+# Optimize for maximum Sharpe ratio
+ef = EfficientFrontier(mu, Sigma)
+weights = ef.max_sharpe()
+cleaned_weights = ef.clean_weights()
+
+# Display the optimal weights for assets and portfolio performance
+print("\nOptimal weights:\n")
+print(cleaned_weights)
+print("\nExpected return, Volatility, Sharpe ratio:")
+print(ef.portfolio_performance(verbose=True))
