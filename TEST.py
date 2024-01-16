@@ -227,39 +227,170 @@ print(listOfSymbols)"""
 #
 # print(d)
 
-import pandas as pd
-import numpy as np
-from pypfopt.efficient_frontier import EfficientFrontier
-from pypfopt import risk_models
-from pypfopt import expected_returns
+import os
+import datetime
 
-# Generating random stock names for demonstration purposes
-np.random.seed(123)
-num_stocks = 5
-stocks = ['Stock_' + str(i) for i in range(1, num_stocks+1)]
+def generate_csv_filename(prefix):
+    now = datetime.datetime.now()
+    formatted_date = now.strftime("%Y%m%d%H%M")
+    filename = f"{prefix}_{formatted_date}.csv"
+    return filename
 
-# Creating random returns data for stocks
-num_obs = 1000
-np.random.seed(456)
-stock_returns = np.random.rand(num_obs, num_stocks)  # Random returns data
-dates = pd.date_range(start='1/1/2020', periods=num_obs, freq='D')
-returns_df = pd.DataFrame(stock_returns, columns=stocks, index=dates)
+def get_most_recent_csv_file(directory, prefix):
+    prefix_files = [file for file in os.listdir(directory) if file.startswith(prefix)]
 
-# Displaying the randomly generated returns data
-print("\nRandomly generated returns data for demonstration purposes:")
-print(returns_df.head())
+    if prefix_files:
+        prefix_files.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)), reverse=True)
+        most_recent_csv = prefix_files[0]
+        return most_recent_csv
+    else:
+        return None  # No files found with the specified prefix
 
-# Calculate expected returns and sample covariance matrix
-mu = expected_returns.mean_historical_return(returns_df)
-Sigma = risk_models.sample_cov(returns_df)
+# Function to get the most recent file for each prefix
+def get_most_recent_files_for_prefixes(directory, prefixes):
+    most_recent_files = {}
+    for prefix in prefixes:
+        most_recent_files[prefix] = get_most_recent_csv_file(directory, prefix)
+    return most_recent_files
 
-# Optimize for maximum Sharpe ratio
-ef = EfficientFrontier(mu, Sigma)
-weights = ef.max_sharpe()
-cleaned_weights = ef.clean_weights()
+# Provide the path to your directory where CSV files are stored
+directory_path = "."
 
-# Display the optimal weights for assets and portfolio performance
-print("\nOptimal weights:\n")
-print(cleaned_weights)
-print("\nExpected return, Volatility, Sharpe ratio:")
-print(ef.portfolio_performance(verbose=True))
+# List of prefixes for your files
+file_prefixes = ["current_positions", "stock_data", "ticker_symbols", "transactions"]
+
+# Get the most recent file for each prefix
+recent_files_for_prefixes = get_most_recent_files_for_prefixes(directory_path, file_prefixes)
+
+# Display the most recent file for each prefix
+for prefix, recent_file in recent_files_for_prefixes.items():
+    if recent_file:
+        print(f"The most recent '{prefix}' CSV file is: {recent_file}")
+    else:
+        print(f"No '{prefix}' CSV files found in the directory.")
+
+for key in recent_files_for_prefixes:
+    print(key + recent_files_for_prefixes[key])
+
+
+# import pandas as pd
+# import numpy as np
+# from pypfopt.efficient_frontier import EfficientFrontier
+# from pypfopt import risk_models
+# from pypfopt import expected_returns
+#
+# # Generating random stock names for demonstration purposes
+# np.random.seed(123)
+# num_stocks = 5
+# stocks = ['Stock_' + str(i) for i in range(1, num_stocks+1)]
+#
+# # Creating random returns data for stocks
+# num_obs = 1000
+# np.random.seed(456)
+# stock_returns = np.random.rand(num_obs, num_stocks)  # Random returns data
+# dates = pd.date_range(start='1/1/2020', periods=num_obs, freq='D')
+# returns_df = pd.DataFrame(stock_returns, columns=stocks, index=dates)
+#
+# # Displaying the randomly generated returns data
+# print("\nRandomly generated returns data for demonstration purposes:")
+# print(returns_df.head())
+#
+# # Calculate expected returns and sample covariance matrix
+# mu = expected_returns.mean_historical_return(returns_df)
+# Sigma = risk_models.sample_cov(returns_df)
+#
+# # Optimize for maximum Sharpe ratio
+# ef = EfficientFrontier(mu, Sigma)
+# weights = ef.max_sharpe()
+# cleaned_weights = ef.clean_weights()
+#
+# # Display the optimal weights for assets and portfolio performance
+# print("\nOptimal weights:\n")
+# print(cleaned_weights)
+# print("\nExpected return, Volatility, Sharpe ratio:")
+# print(ef.portfolio_performance(verbose=True))
+
+# ticker_symbols = ['AAPL', 'MSFT', 'GOOG', 'GOOGL', 'AMZN', 'NVDA', 'META', 'BRK.B', 'TSLA', 'LLY', 'V', 'AVGO', 'JPM',
+#                   'UNH', 'WMT', 'XOM', 'MA', 'JNJ', 'PG', 'HD', 'COST', 'MRK', 'ORCL', 'ABBV', 'CVX', 'ADBE', 'CRM',
+#                   'KO', 'BAC', 'AMD', 'PEP', 'ACN', 'NFLX', 'MCD', 'TMO', 'CSCO', 'INTC', 'LIN', 'ABT', 'TMUS', 'CMCSA',
+#                   'WFC', 'INTU', 'DHR', 'DIS', 'AMGN', 'VZ', 'PFE', 'NKE', 'QCOM', 'IBM', 'TXN', 'NOW', 'PM', 'CAT',
+#                   'MS', 'UNP', 'BX', 'GE', 'SPGI', 'UPS', 'AXP', 'COP', 'HON', 'BA', 'UBER', 'ISRG', 'PLD', 'LOW',
+#                   'AMAT', 'NEE', 'RTX', 'GS', 'BKNG', 'BLK', 'SYK', 'T', 'MDT', 'SCHW', 'LMT', 'VRTX', 'ELV', 'DE',
+#                   'TJX', 'GILD', 'SBUX', 'PANW', 'BMY', 'C', 'LRCX', 'REGN', 'MDLZ', 'PGR', 'CVS', 'AMT', 'ADP', 'ETN',
+#                   'MMC', 'ADI', 'CB', 'ZTS', 'MU', 'CI', 'ABNB', 'BSX', 'FI', 'ANET', 'SO', 'SHW', 'EQIX', 'ITW',
+#                   'KLAC', 'DUK', 'HCA', 'SNPS', 'MO', 'WM', 'CDNS', 'NOC', 'SLB', 'ICE', 'CME', 'GD', 'MCO', 'CSX',
+#                   'BDX', 'EOG', 'CL', 'MAR', 'PYPL', 'USB', 'TGT', 'MCK', 'LULU', 'CMG', 'FDX', 'MNST', 'CTAS', 'AON',
+#                   'MPC', 'MMM', 'PNC', 'PH', 'FCX', 'APD', 'PSX', 'APH', 'TDG', 'ROP', 'ECL', 'ORLY', 'TT', 'EMR',
+#                   'HUM', 'CHTR', 'NXPI', 'MSI', 'RSG', 'PXD', 'NSC', 'PSA', 'ADSK', 'DHI', 'OXY', 'MET', 'WELL', 'AJG',
+#                   'PCAR', 'TFC', 'CCI', 'COF', 'AFL', 'DXCM', 'GM', 'EL', 'FTNT', 'SPG', 'SRE', 'AIG', 'STZ', 'CARR',
+#                   'HLT', 'KHC', 'MCHP', 'ROST', 'CPRT', 'F', 'EW', 'VLO', 'TRV', 'KDP', 'IDXX', 'AZO', 'COR', 'HES',
+#                   'NEM', 'MSCI', 'PAYX', 'AEP', 'LEN', 'O', 'WMB', 'ODFL', 'BK', 'CNC', 'KMB', 'GWW', 'NUE', 'DLR',
+#                   'KVUE', 'OKE', 'TEL', 'MRNA', 'KMI', 'D', 'ALL', 'LHX', 'CTSH', 'IQV', 'HSY', 'AMP', 'JCI', 'A',
+#                   'SYY', 'URI', 'AME', 'DOW', 'LVS', 'PCG', 'PRU', 'ADM', 'EA', 'FIS', 'FAST', 'YUM', 'CEG', 'GIS',
+#                   'BIIB', 'EXC', 'IT', 'OTIS', 'ROK', 'GEHC', 'VRSK', 'PPG', 'CSGP', 'GPN', 'XEL', 'CMI', 'KR', 'NDAQ',
+#                   'CTVA', 'DD', 'EXR', 'VICI', 'BKR', 'ON', 'ED', 'IR', 'RCL', 'HAL', 'MLM', 'LYB', 'FICO', 'ANSS',
+#                   'PEG', 'EFX', 'VMC', 'DLTR', 'DG', 'HPQ', 'PWR', 'CDW', 'ACGL', 'MPWR', 'FANG', 'TTWO', 'DVN', 'DFS',
+#                   'EIX', 'XYL', 'BF.B', 'KEYS', 'WEC', 'GLW', 'CAH', 'CBRE', 'WBD', 'AVB', 'SBAC', 'AWK', 'ZBH', 'WST',
+#                   'WTW', 'MTD', 'RMD', 'FTV', 'DAL', 'HIG', 'TROW', 'WY', 'TSCO', 'CHD', 'BR', 'GRMN', 'STT', 'EQR',
+#                   'ULTA', 'FITB', 'WAB', 'NVR', 'RJF', 'APTV', 'HWM', 'PHM', 'DTE', 'MOH', 'MTB', 'STE', 'FE', 'ARE',
+#                   'ILMN', 'ETR', 'EBAY', 'BRO', 'ROL', 'CCL', 'LYV', 'VRSN', 'ALGN', 'TDY', 'INVH', 'HPE', 'BLDR',
+#                   'VTR', 'EXPE', 'DOV', 'PTC', 'FLT', 'IFF', 'BAX', 'WBA', 'PPL', 'ES', 'JBHT', 'IRM', 'GPC', 'CTRA',
+#                   'COO', 'K', 'LH', 'AEE', 'AXON', 'WRB', 'PFG', 'DRI', 'TRGP', 'VLTO', 'EXPD', 'STLD', 'WAT', 'HBAN',
+#                   'TYL', 'CNP', 'NTAP', 'MKC', 'EPAM', 'AKAM', 'CLX', 'BALL', 'FDS', 'OMC', 'HUBB', 'ATO', 'HOLX',
+#                   'HRL', 'NTRS', 'STX', 'FSLR', 'LUV', 'RF', 'CMS', 'J', 'CINF', 'SWKS', 'JBL', 'WDC', 'EG', 'CE',
+#                   'TER', 'ESS', 'BBY', 'AVY', 'L', 'TSN', 'IEX', 'MAA', 'TXT', 'EQT', 'LW', 'DGX', 'SYF', 'LDOS', 'MAS',
+#                   'ENPH', 'SNA', 'PKG', 'GEN', 'ALB', 'POOL', 'CFG', 'CF', 'SWK', 'FOX', 'FOXA', 'MGM', 'DPZ', 'NDSN',
+#                   'AMCR', 'NWS', 'BEN', 'INCY', 'NWSA', 'VTRS', 'PODD', 'HST', 'KIM', 'CAG', 'BG', 'SJM', 'MRO', 'RVTY',
+#                   'TAP', 'CBOE', 'KEY', 'UAL', 'IP', 'CPB', 'LNT', 'ZBRA', 'TRMB', 'UDR', 'LKQ', 'EVRG', 'AES', 'IPG',
+#                   'JKHY', 'AOS', 'NI', 'JNPR', 'REG', 'TFX', 'PNR', 'NRG', 'TECH', 'PEAK', 'PAYC', 'GL', 'KMX', 'BXP',
+#                   'CRL', 'UHS', 'MOS', 'WRK', 'WYNN', 'CPT', 'FFIV', 'ALLE', 'EMN', 'CDAY', 'CHRW', 'MKTX', 'HII',
+#                   'MTCH', 'APA', 'DVA', 'QRVO', 'HSIC', 'CZR', 'BBWI', 'BIO', 'RL', 'CTLT', 'PARA', 'AIZ', 'AAL', 'RHI',
+#                   'ETSY', 'FRT', 'TPR', 'PNW', 'IVZ', 'XRAY', 'BWA', 'GNRC', 'FMC', 'CMA', 'NCLH', 'HAS', 'MHK', 'VFC',
+#                   'WHR', 'ZION']
+#
+# ticker_symbols = [
+#     'MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES',
+#     'AFL', 'A', 'APD', 'AKAM', 'ALK', 'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE',
+#     'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AAL', 'AEP',
+#     'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS',
+#     'ANTM', 'AON', 'AOS', 'APA', 'AAPL', 'AMAT', 'APTV', 'ADM', 'ANET', 'AJG',
+#     'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'BKR', 'BLL', 'BAC',
+#     'BK', 'BAX', 'BDX', 'BRK.B', 'BBY', 'BIO', 'BIIB', 'BLK', 'BA', 'BKNG',
+#     'BWA', 'BXP', 'BSX', 'BMY', 'AVGO', 'BR', 'BF.B', 'CHRW', 'COG', 'CDNS',
+#     'CZR', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CTLT', 'CAT', 'CBOE',
+#     'CBRE', 'CDW', 'CE', 'CNC', 'CNP', 'CERN', 'CF', 'SCHW', 'CHTR', 'CVX',
+#     'CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CTXS', 'CLX',
+#     'CME', 'CMS', 'KO', 'CTSH', 'CL', 'CMCSA', 'CMA', 'CAG', 'CXO', 'COP',
+#     'ED', 'STZ', 'COO', 'CPRT', 'GLW', 'CTVA', 'COST', 'CCI', 'CSX', 'CMI',
+#     'CVS', 'DHI', 'DHR', 'DRI', 'DVA', 'DE', 'DAL', 'XRAY', 'DVN', 'DXCM',
+#     'FANG', 'DLR', 'DFS', 'DISCA', 'DISCK', 'DISH', 'DG', 'DLTR', 'D', 'DPZ',
+#     'DOV', 'DOW', 'DTE', 'DUK', 'DRE', 'DD', 'DXC', 'EMN', 'ETN', 'EBAY',
+#     'ECL', 'EIX', 'EW', 'EA', 'EMR', 'ETR', 'EOG', 'EFX', 'EQIX', 'EQR', 'ESS',
+#     'EL', 'ETSY', 'EVRG', 'ES', 'RE', 'EXC', 'EXPE', 'EXPD', 'EXR', 'XOM',
+#     'FFIV', 'FB', 'FAST', 'FRT', 'FDX', 'FIS', 'FITB', 'FE', 'FRC', 'FISV',
+#     'FLT', 'FLIR', 'FLS', 'FMC', 'F', 'FTNT', 'FTV', 'FBHS', 'FOXA', 'FOX',
+#     'BEN', 'FCX', 'GPS', 'GRMN', 'IT', 'GD', 'GE', 'GIS', 'GM', 'GPC', 'GILD',
+#     'GL', 'GPN', 'GS', 'GWW', 'HAL', 'HBI', 'HIG', 'HAS', 'HCA', 'PEAK', 'HSIC',
+#     'HSY', 'HES', 'HPE', 'HLT', 'HFC', 'HOLX', 'HD', 'HON', 'HRL', 'HST',
+#     'HWM', 'HPQ', 'HUM', 'HBAN', 'HII', 'IEX', 'IDXX', 'INFO', 'ITW', 'ILMN',
+#     'INCY', 'IR', 'INTC', 'ICE', 'IBM', 'IP', 'IPG', 'IFF', 'INTU', 'ISRG',
+#     'IVZ', 'IPGP', 'IQV', 'IRM', 'JKHY', 'J', 'JBHT', 'SJM', 'JNJ', 'JCI',
+#     'JPM', 'JNPR', 'KSU', 'K', 'KEY', 'KEYS', 'KMB', 'KIM', 'KMI', 'KLAC',
+#     'KHC', 'KR', 'LB', 'LHX', 'LH', 'LRCX', 'LW', 'LVS', 'LEG', 'LDOS', 'LEN',
+#     'LLY', 'LNC', 'LIN', 'LYV', 'LKQ', 'LMT', 'L', 'LOW', 'LUMN', 'LYB', 'MTB',
+#     'MRO', 'MPC', 'MKTX', 'MAR', 'MMC', 'MLM', 'MAS', 'MA', 'MKC', 'MXIM',
+#     'MCD', 'MCK', 'MDT', 'MRK', 'MET', 'MTD', 'MGM', 'MCHP', 'MU', 'MSFT',
+#     'MAA', 'MHK', 'TAP', 'MDLZ', 'MPWR', 'MNST', 'MCO', 'MS', 'MOS', 'MSI',
+#     'MSCI', 'MYL', 'NDAQ', 'NOV', 'NTAP', 'NFLX', 'NWL', 'NEM', 'NWSA', 'NWS',
+#     'NEE', 'NLSN', 'NKE', 'NI', 'NSC', 'NTRS', 'NOC', 'NLOK', 'NCLH', 'NRG',
+#     'NUE', 'NVDA', 'NVR', 'ORLY', 'OXY', 'ODFL', 'OMC', 'OKE', 'ORCL', 'OTIS',
+#     'PCAR', 'PKG', 'PH', 'PAYX', 'PAYC', 'PYPL', 'PENN', 'PNR', 'PBCT', 'PEP',
+#     'PKI', 'PRGO', 'PFE', 'PM', 'PSX', 'PNW', 'PXD', 'PNC', 'POOL', 'PPG',
+#     'PPL', 'PFG', 'PG', 'PGR', 'PLD', 'PRU', 'PTC', 'PEG', 'PSA', 'PHM',
+# ]
+#
+#
+# ticker_set = set(ticker_symbols)
+# ticker_list = sorted(list(ticker_set))
+# print(ticker_list)
+# print(len(ticker_list))
