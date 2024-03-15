@@ -15,7 +15,7 @@ import yfinance as yf
 # various declarations in alphabetical order
 current_positions = {}
 directory_path = '.'    # path to the directory where CSV files are stored
-file_prefixes = ['current_positions', 'stock_data', 'transactions']   # v1 list of file prefixes
+file_prefixes = ['current_positions', 'transactions']   # v1 list of file prefixes
 list_of_stocks = []	    # list of Stock objects containing information on every stock that will be tested
 market_open = False	    # beginning value of False to be tested daily
 recent_files_for_prefixes = {}
@@ -94,6 +94,8 @@ def create_stock_objects(missing_stocks):
 
 def daily_steps():  # we will cycle through this one every day
     global market_open
+
+    start_time = time.time()
     market_open = is_market_open()  # changes value to True if the stock market is open that day
 
     if market_open:
@@ -107,13 +109,9 @@ def daily_steps():  # we will cycle through this one every day
         temp_weights = optimal_weights(temp_stock_returns)
         temp_trade_decisions = buy_or_sell(temp_stock_prices, temp_weights)
         execute_orders(temp_stock_prices, temp_trade_decisions)
-        with open(write_csv_file(directory_path, 'current_positions'), 'w', newline='') as fp:
-            write_csv = csv.writer(fp)
-            write_csv.writerow(['Item', 'Shares', 'Value ($)'])
-            for key in current_positions:
-                write_csv.writerow([key, current_positions[key]['shares'], current_positions[key]['value']])
+        update_current_positions()
 
-    print('DONE!!')
+    print("Time elapsed: {:.2f}s".format(time.time() - start_time))
     market_open = False
 
 
@@ -218,14 +216,12 @@ def get_most_recent_csv_file(directory, prefix):
     if path.exists(prefix_directory) and path.isdir(prefix_directory):
         # List all files in the prefix directory
         prefix_files = [file for file in listdir(prefix_directory) if file.endswith('.csv')]
-
         # Get the most recent CSV file based on file modification time
         if prefix_files:
             prefix_files = [path.join(prefix_directory, file) for file in prefix_files]
             prefix_files.sort(key=lambda x: path.getmtime(x), reverse=True)
             most_recent_csv = prefix_files[0]
             return most_recent_csv
-
     return None  # No files found with the specified prefix or directory does not exist
 
 
@@ -237,26 +233,25 @@ def get_most_recent_files_for_prefixes(directory, prefixes):
     return most_recent_files
 
 
+def get_time_until_next_run():
+    now = datetime.datetime.now()
+    next_run_time = datetime.datetime(now.year, now.month, now.day, 11, 0)  # Next run at 11:00
+    if now > next_run_time:
+        next_run_time += datetime.timedelta(days=1)  # If it's already past 12:00 today, schedule for tomorrow
+    time_until_run = next_run_time - now
+    return time_until_run
+
+
 def is_market_open():
     now = datetime.datetime.now(tz)
     open_time = datetime.time(hour=9, minute=30, second=0)
     close_time = datetime.time(hour=16, minute=0, second=0)
     # If a holiday
     if now.strftime('%Y-%m-%d') in us_holidays:
-        # Override for testing
-        override_request = input('Override market_open (t/f)? ')
-        if override_request == 't':
-            return True
-        else:
-            return False
-    # If before 0930 or after 1600
+        return False
+    # If it's before 0930 or after 1600
     elif (now.time() < open_time) or (now.time() > close_time):
-        # Override for testing
-        override_request = input('Override market_open (t/f)? ')
-        if override_request == 't':
-            return True
-        else:
-            return False
+        return False
     # If it's a weekend
     elif now.date().weekday() > 4:
         # Override for testing
@@ -290,15 +285,16 @@ def optimal_weights(returns):
     weights /= np.sum(weights, axis=1)[:, np.newaxis]
 
     # Optimal portfolio
-    def objective(weights):
+    def objective(proportions):
         weighted_returns = 0
-        for weight, expected_return in zip(weights, expected_returns.values()):
-            weighted_returns += weight * expected_return
+        for item_weight, expected_return in zip(proportions, expected_returns.values()):
+            weighted_returns += item_weight * expected_return
 
-        covariance_term = np.dot(weights, np.dot(covariance_matrix, weights))
+        # noinspection PyTypeChecker
+        covariance_term = np.dot(proportions, np.dot(covariance_matrix, proportions))
         return -weighted_returns / np.sqrt(covariance_term)
 
-    constraints = ({'type': 'eq', 'fun': lambda weights: sum(weights) - 1})
+    constraints = ({'type': 'eq', 'fun': lambda weight_amounts: sum(weight_amounts) - 1})
     bounds_list = []
     for asset in range(len(expected_returns)):
         bounds_list.append((0, 1))
@@ -326,12 +322,20 @@ def round_up(number, decimal_places):
     return rounded_number
 
 
+def update_current_positions():
+    with open(write_csv_file(directory_path, 'current_positions'), 'w', newline='') as fp:
+        write_csv = csv.writer(fp)
+        write_csv.writerow(['Item', 'Shares', 'Value ($)'])
+        for key in current_positions:
+            write_csv.writerow([key, current_positions[key]['shares'], current_positions[key]['value']])
+
+
 def update_stock_values(stock_prices, stock_returns):
     global list_of_stocks
     global current_positions
     for item in list_of_stocks:
         if item.ticker not in stock_prices:
-            print(item.ticker + ' is not listed in stock_data')
+            print(item.ticker + ' is not found')
         else:
             item.prices = stock_prices[item.ticker]
             item.prices = stock_returns[item.ticker]
@@ -347,17 +351,14 @@ def write_csv_file(directory, prefix):
     return file_path
 
 
-start_time = time.time()
+# This is the part that runs every day
+schedule.every().day.at('11:00').do(daily_steps)
 
-# daily_steps()
-for i in range(1):
-    daily_steps()
-    print("time elapsed: {:.2f}s".format(time.time() - start_time))
-
-# # this is the part that runs every day
-# schedule.every().day.at('12:00').do(daily_steps)
-#
-# while True:
-#     # Checks whether a scheduled task is pending to run or not
-#     schedule.run_pending()
-#     time.sleep(1)
+while True:
+    print('\n' * 100)
+    # Checks whether a scheduled task is pending to run or not
+    time_until_next_run = get_time_until_next_run()
+    time_until_next_run_formatted = str(time_until_next_run).split('.')[0]  # Extracting hours, minutes, and seconds
+    print(f'Time until next run: {time_until_next_run_formatted}')
+    schedule.run_pending()
+    time.sleep(1)

@@ -454,7 +454,6 @@ print(listOfSymbols)"""
 # current_positions = {}
 # tz = pytz.timezone('US/Eastern')    # timezone used for determining market open status
 # us_holidays = holidays.country_holidays('US')   # list of holidays used for determining market open status
-# # TODO: defining global variables
 #
 #
 # # define methods
@@ -510,7 +509,6 @@ print(listOfSymbols)"""
 #     market_open = False
 #
 #
-# # TODO: change this into actual code
 # def execute_orders(temp_stock_data, trade_decisions):
 #     global current_positions
 #     global recent_files_for_prefixes
@@ -556,7 +554,6 @@ print(listOfSymbols)"""
 #         #                         current_positions[item]['value']])
 #
 #
-# # TODO: change this to pull the actual data needed for algorithms
 # def fetch_stock_data(stock_ticker_list):
 #     stock_data = {}
 #     for item in tqdm(stock_ticker_list, desc='Fetch Data'):
@@ -657,11 +654,9 @@ print(listOfSymbols)"""
 #         return True
 #
 #
-# # TODO: change this into actual code
 # def to_buy_or_not_to_buy(temp_stock_data):
 #     temp_decisions = {}
 #     for item in temp_stock_data:
-#         # TODO: this is financial decision making for Buy
 #         if temp_stock_data[item]['current_price'] < 50.0:
 #             if current_positions['Cash']['value'] >= temp_stock_data[item]['current_price']:
 #                 temp_decisions[item] = 1.0
@@ -671,7 +666,6 @@ print(listOfSymbols)"""
 #     return temp_decisions
 #
 #
-# # TODO: change this into actual code
 # def to_sell_or_not_to_sell(temp_stock_data):
 #     temp_decisions = {}
 #     for item in current_positions:
@@ -680,7 +674,6 @@ print(listOfSymbols)"""
 #         elif item not in temp_stock_data:
 #             print(item + ' is not listed in temp_stock_data')
 #             temp_decisions[item] = -current_positions[item]['shares']
-#         # TODO: this is financial decision making for Sell
 #         elif temp_stock_data[item]['current_price'] < 50.0:
 #             if current_positions[item]['shares'] > 1.0:
 #                 temp_decisions[item] = -1.0
@@ -690,7 +683,6 @@ print(listOfSymbols)"""
 #     return temp_decisions
 #
 #
-# # TODO: change this when I figure out what information I actually need
 # def update_stock_values(stock_data):
 #     global list_of_stocks
 #     global current_positions
