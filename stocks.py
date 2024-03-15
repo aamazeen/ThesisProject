@@ -1,4 +1,3 @@
-# TODO: change this to use variables needed for algorithms
 class Stock:
     def __init__(self, ticker, prices, returns):
         self.ticker = ticker
