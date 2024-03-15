@@ -185,9 +185,9 @@ def fetch_stock_data():
     return {'stock_prices': stock_prices, 'stock_returns': stock_returns}
 
 
-def find_missing_stocks(tickers_and_prices, tickers_and_returns):
+def find_missing_stocks(prices, returns):
     temp_missing_stocks = {}
-    for item in tickers_and_prices:
+    for item in prices:
         stock_found = False		# changes value to True if the match is found
         for stock in list_of_stocks:
             if item == stock.ticker:
@@ -198,7 +198,7 @@ def find_missing_stocks(tickers_and_prices, tickers_and_returns):
         if stock_found:
             continue
         else:
-            temp_missing_stocks[item] = {'prices': tickers_and_prices[item], 'returns': tickers_and_returns[item]}
+            temp_missing_stocks[item] = {'prices': prices[item], 'returns': returns[item]}
     return temp_missing_stocks
 
 
@@ -330,18 +330,18 @@ def update_current_positions():
             write_csv.writerow([key, current_positions[key]['shares'], current_positions[key]['value']])
 
 
-def update_stock_values(stock_prices, stock_returns):
+def update_stock_values(prices, returns):
     global list_of_stocks
     global current_positions
     for item in list_of_stocks:
-        if item.ticker not in stock_prices:
+        if item.ticker not in prices:
             print(item.ticker + ' is not found')
         else:
-            item.prices = stock_prices[item.ticker]
-            item.prices = stock_returns[item.ticker]
+            item.prices = prices[item.ticker]
+            item.prices = returns[item.ticker]
             if item.ticker in current_positions:
                 current_positions[item.ticker]['value'] = round_up(float(current_positions[item.ticker]['shares']) *
-                                                                   stock_prices[item.ticker][-1], 2)
+                                                                   prices[item.ticker][-1], 2)
 
 
 def write_csv_file(directory, prefix):
@@ -351,9 +351,10 @@ def write_csv_file(directory, prefix):
     return file_path
 
 
-# This is the part that runs every day
+# This is the part that runs once every day
 schedule.every().day.at('11:00').do(daily_steps)
 
+# This loops every second during the remainder of the day
 while True:
     print('\n' * 100)
     # Checks whether a scheduled task is pending to run or not

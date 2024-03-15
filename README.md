@@ -3,7 +3,8 @@
 Users are people looking to create a stock portfolio but
 want the process to be automated. The project runs once
 per day around noon and cycles through all the instructions
-for the day. CSV files will store a list of current stock
+for the day, buying and selling stocks to readjust the
+portfolio. CSV files will store a list of current stock
 positions as well as a list of all transactions.
 
 ## Install required libraries
@@ -18,8 +19,14 @@ $ pip install -r requirements.txt
 ```
 or
 ```shell
-$ pip install PILLOW
-$ pip install pytest
+$ pip install --upgrade pip
+$ pip install holidays
+$ pip install numpy
+$ pip install pytz
+$ pip install Schedule
+$ pip install scipy
+$ pip install tqdm
+$ pip install yfinance
 ```
 Note: You need to import those packages in your
 Python file.
