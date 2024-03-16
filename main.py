@@ -254,12 +254,7 @@ def is_market_open():
         return False
     # If it's a weekend
     elif now.date().weekday() > 4:
-        # Override for testing
-        override_request = input('Override market_open (t/f)? ')
-        if override_request == 't':
-            return True
-        else:
-            return False
+        return False
     else:
         return True
 
