@@ -99,6 +99,7 @@ def daily_steps():  # we will cycle through this one every day
     market_open = is_market_open()  # changes value to True if the stock market is open that day
 
     if market_open:
+        print('\n' * 100)
         establish_current_positions()
         temp_stock_data = fetch_stock_data()
         temp_stock_prices = temp_stock_data['stock_prices']
@@ -149,7 +150,7 @@ def execute_orders(prices, trade_decisions):
 
     with open(write_csv_file(directory_path, 'transactions'), 'w', newline='') as fp:
         write_csv = csv.writer(fp)
-        write_csv.writerow(['DateTime', 'Ticker', 'Old Balance', 'Transaction Amount', 'New Balance'])
+        write_csv.writerow(['Date', 'Ticker', 'Old Balance', 'Transaction Amount', 'New Balance'])
         # write existing content to the new file
         write_csv.writerows(existing_content)
 
@@ -163,7 +164,7 @@ def execute_orders(prices, trade_decisions):
                                              prices[item][-1], 2),
                                     round_up(trade_decisions[item] * prices[item][-1], 2),
                                     current_positions[item]['value']])
-            if current_positions[item]['shares'] == 0.0:
+            if current_positions[item]['value'] == 0.0:
                 del current_positions[item]
 
 

@@ -1,3 +1,19 @@
+<!-- TOC -->
+* [Thesis Project Andrew Amazeen](#thesis-project-andrew-amazeen)
+  * [Install required libraries](#install-required-libraries)
+  * [To run the program](#to-run-the-program)
+  * [Functionality](#functionality)
+    * [Daily Schedule](#daily-schedule)
+  * [Data files](#data-files)
+    * [current_positionsYYYYMMDDHHMM.csv](#currentpositionsyyyymmddhhmmcsv)
+    * [transactionsYYYYMMDDHHMM.csv](#transactionsyyyymmddhhmmcsv)
+  * [Class](#class)
+    * [Stock Class](#stock-class)
+      * [Variables](#variables)
+      * [Properties](#properties)
+      * [Methods](#methods)
+<!-- TOC -->
+
 # Thesis Project Andrew Amazeen
 
 Users are people looking to create a stock portfolio but
@@ -37,69 +53,86 @@ top-right corner of the PyCharm window.
 
 or
 ```shell
-$ python aamazeen_project.py
+$ python main.py
 ```
 
 ## Functionality
-### Create Schedule
-After entering your desired major(s), a sample course schedule
-for your 4 years in college will be created, even combining
-courses for double majors.
+### Daily Schedule
+The program's logic executes once per day, regardless of
+whether the stock market is open. Once the code starts
+running, a countdown will appear, dictating how much time
+remains until the next execution.
 
-This output is a sample and can still be edited by selecting
-different majors or editing your name and again selecting the
-'Create Schedule' button.
+At the predetermined time of execution each day, the
+program first determines whether the stock market is open
+(excluding holidays, weekends, and times outside of
+trading hours). If it passes each of these tests, then
+the main logic will begin executing. If it does not, the
+program continues to count down until the following day's
+execution.
 
-On the back end, the code will automatically register the inputs
-and determine which schedule to present to the user. These are
-not yet recorded in the .csv file until the user decides to
-finalize their schedule with the Submit button.
+The program will then go through the steps of downloading
+all Adjusted Closing Prices for the predetermined ticker
+symbols since 07/01/2023, separating out prices and daily
+returns, updating the values of currently owned stocks,
+running the Efficient Frontier formula, buying and selling
+stocks, and finally outputting .csv files showing your
+current positions and a list of all transactions.
 
-### Submit
-Once a schedule is created, the user may choose to finalize
-their schedule by clicking the Submit button. This takes record
-of their name, majors, course schedule, and a timestamp of
-their request. This also clears the entries so that a new user
-may create a schedule with their own majors. Users may not use
-the Submit button until they have created a schedule.
-
-### Exit
-The application will be closed when the Exit
-button is clicked.
+The outputs are stored in appropriately-named folders,
+showing different versions for each new day (e.g.,
+current_positions202403141502 in the YYYYMMDDHHMM format).
+The most recent .csv files must remain in these folders,
+as this is how the program reminds itself of past
+variables in case the execution was interrupted.
 
 ## Data files
-### students.csv
-The file contains the transaction data in the
-following format:
+### current_positionsYYYYMMDDHHMM.csv
+The file contains data on stocks currently in your
+portfolio, in alphabetical order with Cash at the
+beginning, in the following format:
 
-| Time                     | Name   | Majors         | Schedule           |
-|--------------------------|--------|----------------|--------------------|
-| Wed Apr 26 12:51:20 2023 | Andrew | ['BDA', 'CIS'] | {'Fall 2022': ...} |
-| Wed Apr 26 12:51:26 2023 | Lucas  | ['CIS']        | {'Fall 2022': ...} |
-| Wed Apr 26 12:51:34 2023 | Ethan  | ['BDA']        | {'Fall 2022': ...} |
+| Item | Shares  | Value ($) |
+|------|---------|-----------|
+| Cash | 0       | 9.82      |
+| A    | 0.0002  | 0.03      |
+| ABBV | 41.5133 | 7510.59   |
+| AKAM | 6.8164  | 748.31    |
+| CBOE | 80.2936 | 14589.35  |
+
+### transactionsYYYYMMDDHHMM.csv
+The file contains the transaction data sorted in order of
+transactions date, the alphabetized by ticker symbol, in
+the following format:
+
+| Date    | Ticker | Old Balance | Transaction Amount | New Balance |
+|---------|--------|-------------|--------------------|-------------|
+| 3/14/24 | A      | 0           | 0.03               | 0.03        |
+| 3/14/24 | ABBV   | 0           | 7510.59            | 7510.59     |
+| 3/14/24 | AKAM   | 0           | 748.31             | 748.31      |
+| 3/14/24 | CBOE   | 0           | 14589.35           | 14589.35    |
 
 ## Class
 
-### Major Class
+### Stock Class
 
 #### Variables
-Each Major Class instance has the following
-instance variables:
-1. major: public, string data type
-2. year: public, integer data type
-3. credit_hours: public, float data type
+Each Stock Class instance has the following instance
+variables:
+- ticker: private, String data type
+- prices: private, list of float data type
+- returns: private, list of float data type
 
+#### Properties
 Each Major Class instance has the following
 properties:
-- major getter
-- major setter
-- year getter
-- year setter
-- credit_hours getter
-- credit_hours setter
+- ticker getter
+- ticker setter
+- prices getter
+- prices setter
+- returns getter
+- returns setter
 
 #### Methods
-The Account Class has the following methods:
-* The dunder__init__(self, major, year, credit_hours) method
-* The dunder__str__(self) method
-* The update_hours(self, hours_earned) instance method
+The Stock Class has the following methods:
+- The dunder__init__(self, ticker, prices, returns) method
