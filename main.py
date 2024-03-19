@@ -164,7 +164,7 @@ def execute_orders(prices, trade_decisions):
                                              prices[item][-1], 2),
                                     round_up(trade_decisions[item] * prices[item][-1], 2),
                                     current_positions[item]['value']])
-            if current_positions[item]['value'] == 0.0:
+            if current_positions[item]['shares'] == 0.0:
                 del current_positions[item]
 
 
