@@ -64,7 +64,6 @@ def buy_or_sell(prices, weights):
     for item in current_positions:
         portfolio_value += current_positions[item]['value']
     for item in weights:
-        # print(item + ': ' + weights[item])
         if item in current_positions:
             if current_positions[item]['value'] == round_up(portfolio_value * 0.9999 * weights[item], 2):
                 continue
@@ -334,7 +333,7 @@ def update_stock_values(prices, returns):
             print(item.ticker + ' is not found')
         else:
             item.prices = prices[item.ticker]
-            item.prices = returns[item.ticker]
+            item.returns = returns[item.ticker]
             if item.ticker in current_positions:
                 current_positions[item.ticker]['value'] = round_up(float(current_positions[item.ticker]['shares']) *
                                                                    prices[item.ticker][-1], 2)

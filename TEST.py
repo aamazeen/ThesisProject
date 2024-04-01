@@ -313,41 +313,41 @@ print(listOfSymbols)"""
 
 # ticker_symbols = ['AAPL', 'MSFT', 'GOOG', 'GOOGL', 'AMZN', 'NVDA', 'META', 'BRK.B', 'TSLA', 'LLY', 'V', 'AVGO', 'JPM',
 #                   'UNH', 'WMT', 'XOM', 'MA', 'JNJ', 'PG', 'HD', 'COST', 'MRK', 'ORCL', 'ABBV', 'CVX', 'ADBE', 'CRM',
-#                   'KO', 'BAC', 'AMD', 'PEP', 'ACN', 'NFLX', 'MCD', 'TMO', 'CSCO', 'INTC', 'LIN', 'ABT', 'TMUS', 'CMCSA',
-#                   'WFC', 'INTU', 'DHR', 'DIS', 'AMGN', 'VZ', 'PFE', 'NKE', 'QCOM', 'IBM', 'TXN', 'NOW', 'PM', 'CAT',
-#                   'MS', 'UNP', 'BX', 'GE', 'SPGI', 'UPS', 'AXP', 'COP', 'HON', 'BA', 'UBER', 'ISRG', 'PLD', 'LOW',
-#                   'AMAT', 'NEE', 'RTX', 'GS', 'BKNG', 'BLK', 'SYK', 'T', 'MDT', 'SCHW', 'LMT', 'VRTX', 'ELV', 'DE',
-#                   'TJX', 'GILD', 'SBUX', 'PANW', 'BMY', 'C', 'LRCX', 'REGN', 'MDLZ', 'PGR', 'CVS', 'AMT', 'ADP', 'ETN',
-#                   'MMC', 'ADI', 'CB', 'ZTS', 'MU', 'CI', 'ABNB', 'BSX', 'FI', 'ANET', 'SO', 'SHW', 'EQIX', 'ITW',
-#                   'KLAC', 'DUK', 'HCA', 'SNPS', 'MO', 'WM', 'CDNS', 'NOC', 'SLB', 'ICE', 'CME', 'GD', 'MCO', 'CSX',
-#                   'BDX', 'EOG', 'CL', 'MAR', 'PYPL', 'USB', 'TGT', 'MCK', 'LULU', 'CMG', 'FDX', 'MNST', 'CTAS', 'AON',
-#                   'MPC', 'MMM', 'PNC', 'PH', 'FCX', 'APD', 'PSX', 'APH', 'TDG', 'ROP', 'ECL', 'ORLY', 'TT', 'EMR',
-#                   'HUM', 'CHTR', 'NXPI', 'MSI', 'RSG', 'PXD', 'NSC', 'PSA', 'ADSK', 'DHI', 'OXY', 'MET', 'WELL', 'AJG',
-#                   'PCAR', 'TFC', 'CCI', 'COF', 'AFL', 'DXCM', 'GM', 'EL', 'FTNT', 'SPG', 'SRE', 'AIG', 'STZ', 'CARR',
-#                   'HLT', 'KHC', 'MCHP', 'ROST', 'CPRT', 'F', 'EW', 'VLO', 'TRV', 'KDP', 'IDXX', 'AZO', 'COR', 'HES',
-#                   'NEM', 'MSCI', 'PAYX', 'AEP', 'LEN', 'O', 'WMB', 'ODFL', 'BK', 'CNC', 'KMB', 'GWW', 'NUE', 'DLR',
-#                   'KVUE', 'OKE', 'TEL', 'MRNA', 'KMI', 'D', 'ALL', 'LHX', 'CTSH', 'IQV', 'HSY', 'AMP', 'JCI', 'A',
-#                   'SYY', 'URI', 'AME', 'DOW', 'LVS', 'PCG', 'PRU', 'ADM', 'EA', 'FIS', 'FAST', 'YUM', 'CEG', 'GIS',
-#                   'BIIB', 'EXC', 'IT', 'OTIS', 'ROK', 'GEHC', 'VRSK', 'PPG', 'CSGP', 'GPN', 'XEL', 'CMI', 'KR', 'NDAQ',
-#                   'CTVA', 'DD', 'EXR', 'VICI', 'BKR', 'ON', 'ED', 'IR', 'RCL', 'HAL', 'MLM', 'LYB', 'FICO', 'ANSS',
-#                   'PEG', 'EFX', 'VMC', 'DLTR', 'DG', 'HPQ', 'PWR', 'CDW', 'ACGL', 'MPWR', 'FANG', 'TTWO', 'DVN', 'DFS',
-#                   'EIX', 'XYL', 'BF.B', 'KEYS', 'WEC', 'GLW', 'CAH', 'CBRE', 'WBD', 'AVB', 'SBAC', 'AWK', 'ZBH', 'WST',
-#                   'WTW', 'MTD', 'RMD', 'FTV', 'DAL', 'HIG', 'TROW', 'WY', 'TSCO', 'CHD', 'BR', 'GRMN', 'STT', 'EQR',
-#                   'ULTA', 'FITB', 'WAB', 'NVR', 'RJF', 'APTV', 'HWM', 'PHM', 'DTE', 'MOH', 'MTB', 'STE', 'FE', 'ARE',
-#                   'ILMN', 'ETR', 'EBAY', 'BRO', 'ROL', 'CCL', 'LYV', 'VRSN', 'ALGN', 'TDY', 'INVH', 'HPE', 'BLDR',
-#                   'VTR', 'EXPE', 'DOV', 'PTC', 'FLT', 'IFF', 'BAX', 'WBA', 'PPL', 'ES', 'JBHT', 'IRM', 'GPC', 'CTRA',
-#                   'COO', 'K', 'LH', 'AEE', 'AXON', 'WRB', 'PFG', 'DRI', 'TRGP', 'VLTO', 'EXPD', 'STLD', 'WAT', 'HBAN',
-#                   'TYL', 'CNP', 'NTAP', 'MKC', 'EPAM', 'AKAM', 'CLX', 'BALL', 'FDS', 'OMC', 'HUBB', 'ATO', 'HOLX',
-#                   'HRL', 'NTRS', 'STX', 'FSLR', 'LUV', 'RF', 'CMS', 'J', 'CINF', 'SWKS', 'JBL', 'WDC', 'EG', 'CE',
-#                   'TER', 'ESS', 'BBY', 'AVY', 'L', 'TSN', 'IEX', 'MAA', 'TXT', 'EQT', 'LW', 'DGX', 'SYF', 'LDOS', 'MAS',
-#                   'ENPH', 'SNA', 'PKG', 'GEN', 'ALB', 'POOL', 'CFG', 'CF', 'SWK', 'FOX', 'FOXA', 'MGM', 'DPZ', 'NDSN',
-#                   'AMCR', 'NWS', 'BEN', 'INCY', 'NWSA', 'VTRS', 'PODD', 'HST', 'KIM', 'CAG', 'BG', 'SJM', 'MRO', 'RVTY',
-#                   'TAP', 'CBOE', 'KEY', 'UAL', 'IP', 'CPB', 'LNT', 'ZBRA', 'TRMB', 'UDR', 'LKQ', 'EVRG', 'AES', 'IPG',
-#                   'JKHY', 'AOS', 'NI', 'JNPR', 'REG', 'TFX', 'PNR', 'NRG', 'TECH', 'PEAK', 'PAYC', 'GL', 'KMX', 'BXP',
-#                   'CRL', 'UHS', 'MOS', 'WRK', 'WYNN', 'CPT', 'FFIV', 'ALLE', 'EMN', 'CDAY', 'CHRW', 'MKTX', 'HII',
-#                   'MTCH', 'APA', 'DVA', 'QRVO', 'HSIC', 'CZR', 'BBWI', 'BIO', 'RL', 'CTLT', 'PARA', 'AIZ', 'AAL', 'RHI',
-#                   'ETSY', 'FRT', 'TPR', 'PNW', 'IVZ', 'XRAY', 'BWA', 'GNRC', 'FMC', 'CMA', 'NCLH', 'HAS', 'MHK', 'VFC',
-#                   'WHR', 'ZION']
+#                   'KO', 'BAC', 'AMD', 'PEP', 'ACN', 'NFLX', 'MCD', 'TMO', 'CSCO', 'INTC', 'LIN', 'ABT', 'TMUS',
+#                   'CMCSA', 'WFC', 'INTU', 'DHR', 'DIS', 'AMGN', 'VZ', 'PFE', 'NKE', 'QCOM', 'IBM', 'TXN', 'NOW', 'PM',
+#                   'CAT', 'MS', 'UNP', 'BX', 'GE', 'SPGI', 'UPS', 'AXP', 'COP', 'HON', 'BA', 'UBER', 'ISRG', 'PLD',
+#                   'LOW', 'AMAT', 'NEE', 'RTX', 'GS', 'BKNG', 'BLK', 'SYK', 'T', 'MDT', 'SCHW', 'LMT', 'VRTX', 'ELV',
+#                   'DE', 'TJX', 'GILD', 'SBUX', 'PANW', 'BMY', 'C', 'LRCX', 'REGN', 'MDLZ', 'PGR', 'CVS', 'AMT', 'ADP',
+#                   'ETN', 'MMC', 'ADI', 'CB', 'ZTS', 'MU', 'CI', 'ABNB', 'BSX', 'FI', 'ANET', 'SO', 'SHW', 'EQIX',
+#                   'ITW', 'KLAC', 'DUK', 'HCA', 'SNPS', 'MO', 'WM', 'CDNS', 'NOC', 'SLB', 'ICE', 'CME', 'GD', 'MCO',
+#                   'CSX', 'BDX', 'EOG', 'CL', 'MAR', 'PYPL', 'USB', 'TGT', 'MCK', 'LULU', 'CMG', 'FDX', 'MNST', 'CTAS',
+#                   'AON', 'MPC', 'MMM', 'PNC', 'PH', 'FCX', 'APD', 'PSX', 'APH', 'TDG', 'ROP', 'ECL', 'ORLY', 'TT',
+#                   'EMR', 'HUM', 'CHTR', 'NXPI', 'MSI', 'RSG', 'PXD', 'NSC', 'PSA', 'ADSK', 'DHI', 'OXY', 'MET',
+#                   'WELL', 'AJG', 'PCAR', 'TFC', 'CCI', 'COF', 'AFL', 'DXCM', 'GM', 'EL', 'FTNT', 'SPG', 'SRE', 'AIG',
+#                   'STZ', 'CARR', 'HLT', 'KHC', 'MCHP', 'ROST', 'CPRT', 'F', 'EW', 'VLO', 'TRV', 'KDP', 'IDXX', 'AZO',
+#                   'COR', 'HES', 'NEM', 'MSCI', 'PAYX', 'AEP', 'LEN', 'O', 'WMB', 'ODFL', 'BK', 'CNC', 'KMB', 'GWW',
+#                   'NUE', 'DLR', 'KVUE', 'OKE', 'TEL', 'MRNA', 'KMI', 'D', 'ALL', 'LHX', 'CTSH', 'IQV', 'HSY', 'AMP',
+#                   'JCI', 'A', 'SYY', 'URI', 'AME', 'DOW', 'LVS', 'PCG', 'PRU', 'ADM', 'EA', 'FIS', 'FAST', 'YUM',
+#                   'CEG', 'GIS', 'BIIB', 'EXC', 'IT', 'OTIS', 'ROK', 'GEHC', 'VRSK', 'PPG', 'CSGP', 'GPN', 'XEL',
+#                   'CMI', 'KR', 'NDAQ', 'CTVA', 'DD', 'EXR', 'VICI', 'BKR', 'ON', 'ED', 'IR', 'RCL', 'HAL', 'MLM',
+#                   'LYB', 'FICO', 'ANSS', 'PEG', 'EFX', 'VMC', 'DLTR', 'DG', 'HPQ', 'PWR', 'CDW', 'ACGL', 'MPWR',
+#                   'FANG', 'TTWO', 'DVN', 'DFS', 'EIX', 'XYL', 'BF.B', 'KEYS', 'WEC', 'GLW', 'CAH', 'CBRE', 'WBD',
+#                   'AVB', 'SBAC', 'AWK', 'ZBH', 'WST', 'WTW', 'MTD', 'RMD', 'FTV', 'DAL', 'HIG', 'TROW', 'WY', 'TSCO',
+#                   'CHD', 'BR', 'GRMN', 'STT', 'EQR', 'ULTA', 'FITB', 'WAB', 'NVR', 'RJF', 'APTV', 'HWM', 'PHM', 'DTE',
+#                   'MOH', 'MTB', 'STE', 'FE', 'ARE', 'ILMN', 'ETR', 'EBAY', 'BRO', 'ROL', 'CCL', 'LYV', 'VRSN', 'ALGN',
+#                   'TDY', 'INVH', 'HPE', 'BLDR', 'VTR', 'EXPE', 'DOV', 'PTC', 'FLT', 'IFF', 'BAX', 'WBA', 'PPL', 'ES',
+#                   'JBHT', 'IRM', 'GPC', 'CTRA', 'COO', 'K', 'LH', 'AEE', 'AXON', 'WRB', 'PFG', 'DRI', 'TRGP', 'VLTO',
+#                   'EXPD', 'STLD', 'WAT', 'HBAN', 'TYL', 'CNP', 'NTAP', 'MKC', 'EPAM', 'AKAM', 'CLX', 'BALL', 'FDS',
+#                   'OMC', 'HUBB', 'ATO', 'HOLX', 'HRL', 'NTRS', 'STX', 'FSLR', 'LUV', 'RF', 'CMS', 'J', 'CINF', 'SWKS',
+#                   'JBL', 'WDC', 'EG', 'CE', 'TER', 'ESS', 'BBY', 'AVY', 'L', 'TSN', 'IEX', 'MAA', 'TXT', 'EQT', 'LW',
+#                   'DGX', 'SYF', 'LDOS', 'MAS', 'ENPH', 'SNA', 'PKG', 'GEN', 'ALB', 'POOL', 'CFG', 'CF', 'SWK', 'FOX',
+#                   'FOXA', 'MGM', 'DPZ', 'NDSN', 'AMCR', 'NWS', 'BEN', 'INCY', 'NWSA', 'VTRS', 'PODD', 'HST', 'KIM',
+#                   'CAG', 'BG', 'SJM', 'MRO', 'RVTY', 'TAP', 'CBOE', 'KEY', 'UAL', 'IP', 'CPB', 'LNT', 'ZBRA', 'TRMB',
+#                   'UDR', 'LKQ', 'EVRG', 'AES', 'IPG', 'JKHY', 'AOS', 'NI', 'JNPR', 'REG', 'TFX', 'PNR', 'NRG', 'TECH',
+#                   'PEAK', 'PAYC', 'GL', 'KMX', 'BXP', 'CRL', 'UHS', 'MOS', 'WRK', 'WYNN', 'CPT', 'FFIV', 'ALLE',
+#                   'EMN', 'CDAY', 'CHRW', 'MKTX', 'HII', 'MTCH', 'APA', 'DVA', 'QRVO', 'HSIC', 'CZR', 'BBWI', 'BIO',
+#                   'RL', 'CTLT', 'PARA', 'AIZ', 'AAL', 'RHI', 'ETSY', 'FRT', 'TPR', 'PNW', 'IVZ', 'XRAY', 'BWA',
+#                   'GNRC', 'FMC', 'CMA', 'NCLH', 'HAS', 'MHK', 'VFC', 'WHR', 'ZION']
 #
 # ticker_symbols = [
 #     'MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES',
@@ -416,40 +416,40 @@ print(listOfSymbols)"""
 # directory_path = '.'    # path to the directory where CSV files are stored
 # file_prefixes = ['current_positions', 'stock_data', 'transactions']   # v1 list of file prefixes
 # # file_prefixes = ['current_positions', 'stock_data', 'ticker_symbols', 'transactions']   # v2 list of file prefixes
-# stock_tickers = [
-#     'A', 'AAL', 'AAPL', 'ABBV', 'ABNB', 'ABT', 'ACGL', 'ACN', 'ADBE', 'ADI', 'ADM', 'ADP', 'ADSK', 'AEE', 'AEP', 'AES',
-#     'AFL', 'AIG', 'AIZ', 'AJG', 'AKAM', 'ALB', 'ALGN', 'ALL', 'ALLE', 'AMAT', 'AMCR', 'AMD', 'AME', 'AMGN', 'AMP',
-#     'AMT', 'AMZN', 'ANET', 'ANSS', 'AON', 'AOS', 'APA', 'APD', 'APH', 'APTV', 'ARE', 'ATO', 'AVB', 'AVGO', 'AVY', 'AWK',
-#     'AXON', 'AXP', 'AZO', 'BA', 'BAC', 'BALL', 'BAX', 'BBWI', 'BBY', 'BDX', 'BEN', 'BG', 'BIIB', 'BIO', 'BK',
-#     'BKNG', 'BKR', 'BLDR', 'BLK', 'BMY', 'BR', 'BRO', 'BSX', 'BWA', 'BX', 'BXP', 'C', 'CAG', 'CAH', 'CARR',
-#     'CAT', 'CB', 'CBOE', 'CBRE', 'CCI', 'CCL', 'CDAY', 'CDNS', 'CDW', 'CE', 'CEG', 'CF', 'CFG', 'CHD', 'CHRW', 'CHTR',
-#     'CI', 'CINF', 'CL', 'CLX', 'CMA', 'CMCSA', 'CME', 'CMG', 'CMI', 'CMS', 'CNC', 'CNP', 'COF', 'COO', 'COP', 'COR',
-#     'COST', 'CPB', 'CPRT', 'CPT', 'CRL', 'CRM', 'CSCO', 'CSGP', 'CSX', 'CTAS', 'CTLT', 'CTRA', 'CTSH', 'CTVA', 'CVS',
-#     'CVX', 'CZR', 'D', 'DAL', 'DD', 'DE', 'DFS', 'DG', 'DGX', 'DHI', 'DHR', 'DIS', 'DLR', 'DLTR', 'DOV', 'DOW', 'DPZ',
-#     'DRI', 'DTE', 'DUK', 'DVA', 'DVN', 'DXCM', 'EA', 'EBAY', 'ECL', 'ED', 'EFX', 'EG', 'EIX', 'EL', 'ELV', 'EMN', 'EMR',
-#     'ENPH', 'EOG', 'EPAM', 'EQIX', 'EQR', 'EQT', 'ES', 'ESS', 'ETN', 'ETR', 'ETSY', 'EVRG', 'EW', 'EXC', 'EXPD', 'EXPE',
-#     'EXR', 'F', 'FANG', 'FAST', 'FCX', 'FDS', 'FDX', 'FE', 'FFIV', 'FI', 'FICO', 'FIS', 'FITB', 'FLT', 'FMC', 'FOX',
-#     'FOXA', 'FRT', 'FSLR', 'FTNT', 'FTV', 'GD', 'GE', 'GEHC', 'GEN', 'GILD', 'GIS', 'GL', 'GLW', 'GM', 'GNRC', 'GOOG',
-#     'GOOGL', 'GPC', 'GPN', 'GRMN', 'GS', 'GWW', 'HAL', 'HAS', 'HBAN', 'HCA', 'HD', 'HES', 'HIG', 'HII', 'HLT', 'HOLX',
-#     'HON', 'HPE', 'HPQ', 'HRL', 'HSIC', 'HST', 'HSY', 'HUBB', 'HUM', 'HWM', 'IBM', 'ICE', 'IDXX', 'IEX', 'IFF', 'ILMN',
-#     'INCY', 'INTC', 'INTU', 'INVH', 'IP', 'IPG', 'IQV', 'IR', 'IRM', 'ISRG', 'IT', 'ITW', 'IVZ', 'J', 'JBHT', 'JBL',
-#     'JCI', 'JKHY', 'JNJ', 'JNPR', 'JPM', 'K', 'KDP', 'KEY', 'KEYS', 'KHC', 'KIM', 'KLAC', 'KMB', 'KMI', 'KMX', 'KO',
-#     'KR', 'KVUE', 'L', 'LDOS', 'LEN', 'LH', 'LHX', 'LIN', 'LKQ', 'LLY', 'LMT', 'LNT', 'LOW', 'LRCX', 'LULU', 'LUV',
-#     'LVS', 'LW', 'LYB', 'LYV', 'MA', 'MAA', 'MAR', 'MAS', 'MCD', 'MCHP', 'MCK', 'MCO', 'MDLZ', 'MDT', 'MET', 'META',
-#     'MGM', 'MHK', 'MKC', 'MKTX', 'MLM', 'MMC', 'MMM', 'MNST', 'MO', 'MOH', 'MOS', 'MPC', 'MPWR', 'MRK', 'MRNA', 'MRO',
-#     'MS', 'MSCI', 'MSFT', 'MSI', 'MTB', 'MTCH', 'MTD', 'MU', 'NCLH', 'NDAQ', 'NDSN', 'NEE', 'NEM', 'NFLX', 'NI', 'NKE',
-#     'NOC', 'NOW', 'NRG', 'NSC', 'NTAP', 'NTRS', 'NUE', 'NVDA', 'NVR', 'NWS', 'NWSA', 'NXPI', 'O', 'ODFL', 'OKE', 'OMC',
-#     'ON', 'ORCL', 'ORLY', 'OTIS', 'OXY', 'PANW', 'PARA', 'PAYC', 'PAYX', 'PCAR', 'PCG', 'PEAK', 'PEG', 'PEP', 'PFE',
-#     'PFG', 'PG', 'PGR', 'PH', 'PHM', 'PKG', 'PLD', 'PM', 'PNC', 'PNR', 'PNW', 'PODD', 'POOL', 'PPG', 'PPL', 'PRU',
-#     'PSA', 'PSX', 'PTC', 'PWR', 'PXD', 'PYPL', 'QCOM', 'QRVO', 'RCL', 'REG', 'REGN', 'RF', 'RHI', 'RJF', 'RL', 'RMD',
-#     'ROK', 'ROL', 'ROP', 'ROST', 'RSG', 'RTX', 'RVTY', 'SBAC', 'SBUX', 'SCHW', 'SHW', 'SJM', 'SLB', 'SNA', 'SNPS', 'SO',
-#     'SPG', 'SPGI', 'SRE', 'STE', 'STLD', 'STT', 'STX', 'STZ', 'SWK', 'SWKS', 'SYF', 'SYK', 'SYY', 'T', 'TAP', 'TDG',
-#     'TDY', 'TECH', 'TEL', 'TER', 'TFC', 'TFX', 'TGT', 'TJX', 'TMO', 'TMUS', 'TPR', 'TRGP', 'TRMB', 'TROW', 'TRV',
-#     'TSCO', 'TSLA', 'TSN', 'TT', 'TTWO', 'TXN', 'TXT', 'TYL', 'UAL', 'UBER', 'UDR', 'UHS', 'ULTA', 'UNH', 'UNP', 'UPS',
-#     'URI', 'USB', 'V', 'VFC', 'VICI', 'VLO', 'VLTO', 'VMC', 'VRSK', 'VRSN', 'VRTX', 'VTR', 'VTRS', 'VZ', 'WAB', 'WAT',
-#     'WBA', 'WBD', 'WDC', 'WEC', 'WELL', 'WFC', 'WHR', 'WM', 'WMB', 'WMT', 'WRB', 'WRK', 'WST', 'WTW', 'WY', 'WYNN',
-#     'XEL', 'XOM', 'XRAY', 'XYL', 'YUM', 'ZBH', 'ZBRA', 'ZION', 'ZTS'
-# ]   # list of Fortune 500 ticker symbols, took out BF.B and BRK.B
+stock_tickers = [
+    'A', 'AAL', 'AAPL', 'ABBV', 'ABNB', 'ABT', 'ACGL', 'ACN', 'ADBE', 'ADI', 'ADM', 'ADP', 'ADSK', 'AEE', 'AEP', 'AES',
+    'AFL', 'AIG', 'AIZ', 'AJG', 'AKAM', 'ALB', 'ALGN', 'ALL', 'ALLE', 'AMAT', 'AMCR', 'AMD', 'AME', 'AMGN', 'AMP',
+    'AMT', 'AMZN', 'ANET', 'ANSS', 'AON', 'AOS', 'APA', 'APD', 'APH', 'APTV', 'ARE', 'ATO', 'AVB', 'AVGO', 'AVY', 'AWK',
+    'AXON', 'AXP', 'AZO', 'BA', 'BAC', 'BALL', 'BAX', 'BBWI', 'BBY', 'BDX', 'BEN', 'BG', 'BIIB', 'BIO', 'BK',
+    'BKNG', 'BKR', 'BLDR', 'BLK', 'BMY', 'BR', 'BRO', 'BSX', 'BWA', 'BX', 'BXP', 'C', 'CAG', 'CAH', 'CARR',
+    'CAT', 'CB', 'CBOE', 'CBRE', 'CCI', 'CCL', 'CDAY', 'CDNS', 'CDW', 'CE', 'CEG', 'CF', 'CFG', 'CHD', 'CHRW', 'CHTR',
+    'CI', 'CINF', 'CL', 'CLX', 'CMA', 'CMCSA', 'CME', 'CMG', 'CMI', 'CMS', 'CNC', 'CNP', 'COF', 'COO', 'COP', 'COR',
+    'COST', 'CPB', 'CPRT', 'CPT', 'CRL', 'CRM', 'CSCO', 'CSGP', 'CSX', 'CTAS', 'CTLT', 'CTRA', 'CTSH', 'CTVA', 'CVS',
+    'CVX', 'CZR', 'D', 'DAL', 'DD', 'DE', 'DFS', 'DG', 'DGX', 'DHI', 'DHR', 'DIS', 'DLR', 'DLTR', 'DOV', 'DOW', 'DPZ',
+    'DRI', 'DTE', 'DUK', 'DVA', 'DVN', 'DXCM', 'EA', 'EBAY', 'ECL', 'ED', 'EFX', 'EG', 'EIX', 'EL', 'ELV', 'EMN', 'EMR',
+    'ENPH', 'EOG', 'EPAM', 'EQIX', 'EQR', 'EQT', 'ES', 'ESS', 'ETN', 'ETR', 'ETSY', 'EVRG', 'EW', 'EXC', 'EXPD', 'EXPE',
+    'EXR', 'F', 'FANG', 'FAST', 'FCX', 'FDS', 'FDX', 'FE', 'FFIV', 'FI', 'FICO', 'FIS', 'FITB', 'FLT', 'FMC', 'FOX',
+    'FOXA', 'FRT', 'FSLR', 'FTNT', 'FTV', 'GD', 'GE', 'GEHC', 'GEN', 'GILD', 'GIS', 'GL', 'GLW', 'GM', 'GNRC', 'GOOG',
+    'GOOGL', 'GPC', 'GPN', 'GRMN', 'GS', 'GWW', 'HAL', 'HAS', 'HBAN', 'HCA', 'HD', 'HES', 'HIG', 'HII', 'HLT', 'HOLX',
+    'HON', 'HPE', 'HPQ', 'HRL', 'HSIC', 'HST', 'HSY', 'HUBB', 'HUM', 'HWM', 'IBM', 'ICE', 'IDXX', 'IEX', 'IFF', 'ILMN',
+    'INCY', 'INTC', 'INTU', 'INVH', 'IP', 'IPG', 'IQV', 'IR', 'IRM', 'ISRG', 'IT', 'ITW', 'IVZ', 'J', 'JBHT', 'JBL',
+    'JCI', 'JKHY', 'JNJ', 'JNPR', 'JPM', 'K', 'KDP', 'KEY', 'KEYS', 'KHC', 'KIM', 'KLAC', 'KMB', 'KMI', 'KMX', 'KO',
+    'KR', 'KVUE', 'L', 'LDOS', 'LEN', 'LH', 'LHX', 'LIN', 'LKQ', 'LLY', 'LMT', 'LNT', 'LOW', 'LRCX', 'LULU', 'LUV',
+    'LVS', 'LW', 'LYB', 'LYV', 'MA', 'MAA', 'MAR', 'MAS', 'MCD', 'MCHP', 'MCK', 'MCO', 'MDLZ', 'MDT', 'MET', 'META',
+    'MGM', 'MHK', 'MKC', 'MKTX', 'MLM', 'MMC', 'MMM', 'MNST', 'MO', 'MOH', 'MOS', 'MPC', 'MPWR', 'MRK', 'MRNA', 'MRO',
+    'MS', 'MSCI', 'MSFT', 'MSI', 'MTB', 'MTCH', 'MTD', 'MU', 'NCLH', 'NDAQ', 'NDSN', 'NEE', 'NEM', 'NFLX', 'NI', 'NKE',
+    'NOC', 'NOW', 'NRG', 'NSC', 'NTAP', 'NTRS', 'NUE', 'NVDA', 'NVR', 'NWS', 'NWSA', 'NXPI', 'O', 'ODFL', 'OKE', 'OMC',
+    'ON', 'ORCL', 'ORLY', 'OTIS', 'OXY', 'PANW', 'PARA', 'PAYC', 'PAYX', 'PCAR', 'PCG', 'PEAK', 'PEG', 'PEP', 'PFE',
+    'PFG', 'PG', 'PGR', 'PH', 'PHM', 'PKG', 'PLD', 'PM', 'PNC', 'PNR', 'PNW', 'PODD', 'POOL', 'PPG', 'PPL', 'PRU',
+    'PSA', 'PSX', 'PTC', 'PWR', 'PXD', 'PYPL', 'QCOM', 'QRVO', 'RCL', 'REG', 'REGN', 'RF', 'RHI', 'RJF', 'RL', 'RMD',
+    'ROK', 'ROL', 'ROP', 'ROST', 'RSG', 'RTX', 'RVTY', 'SBAC', 'SBUX', 'SCHW', 'SHW', 'SJM', 'SLB', 'SNA', 'SNPS', 'SO',
+    'SPG', 'SPGI', 'SRE', 'STE', 'STLD', 'STT', 'STX', 'STZ', 'SWK', 'SWKS', 'SYF', 'SYK', 'SYY', 'T', 'TAP', 'TDG',
+    'TDY', 'TECH', 'TEL', 'TER', 'TFC', 'TFX', 'TGT', 'TJX', 'TMO', 'TMUS', 'TPR', 'TRGP', 'TRMB', 'TROW', 'TRV',
+    'TSCO', 'TSLA', 'TSN', 'TT', 'TTWO', 'TXN', 'TXT', 'TYL', 'UAL', 'UBER', 'UDR', 'UHS', 'ULTA', 'UNH', 'UNP', 'UPS',
+    'URI', 'USB', 'V', 'VFC', 'VICI', 'VLO', 'VLTO', 'VMC', 'VRSK', 'VRSN', 'VRTX', 'VTR', 'VTRS', 'VZ', 'WAB', 'WAT',
+    'WBA', 'WBD', 'WDC', 'WEC', 'WELL', 'WFC', 'WHR', 'WM', 'WMB', 'WMT', 'WRB', 'WRK', 'WST', 'WTW', 'WY', 'WYNN',
+    'XEL', 'XOM', 'XRAY', 'XYL', 'YUM', 'ZBH', 'ZBRA', 'ZION', 'ZTS'
+]   # list of Fortune 500 ticker symbols took out BF.B and BRK.B
 # list_of_stocks = []	    # list of Stock objects containing information on every stock that will be tested
 # current_positions = {}
 # tz = pytz.timezone('US/Eastern')    # timezone used for determining market open status
@@ -749,9 +749,11 @@ print(listOfSymbols)"""
 # #         for ticker, shares, value in reader:
 # #             current_positions[ticker] = {'shares': float(shares), 'value': float(value)}
 # #             # load dictionary with existing positions
+#
+#
 # for i in range(3):
 #     daily_steps()
-#
+
 # # this is the part that runs every day
 # # schedule.every().day.at('12:00').do(daily_steps)
 #
@@ -759,13 +761,98 @@ print(listOfSymbols)"""
 # #     # Checks whether a scheduled task is pending to run or not
 # #     schedule.run_pending()
 # #     sleep(1)
+#
+#
+# def round_up(number, decimal_places):
+#     temp_number = number * (10 ** decimal_places)
+#     adjusted_number = temp_number + 0.5
+#     rounded_number = round(adjusted_number) / (10 ** decimal_places)
+#     return rounded_number
+#
+#
+# print(round_up(-3.14159265358979, 0))
 
-
-def round_up(number, decimal_places):
-    temp_number = number * (10 ** decimal_places)
-    adjusted_number = temp_number + 0.5
-    rounded_number = round(adjusted_number) / (10 ** decimal_places)
-    return rounded_number
-
-
-print(round_up(-3.14159265358979, 0))
+# noinspection PyStatementEffect
+{'address1': 'One Microsoft Way', 'city': 'Redmond', 'state': 'WA', 'zip': '98052-6399', 'country': 'United States',
+ 'phone': '425 882 8080', 'website': 'https://www.microsoft.com', 'industry': 'Software - Infrastructure',
+ 'industryKey': 'software-infrastructure', 'industryDisp': 'Software - Infrastructure', 'sector': 'Technology',
+ 'sectorKey': 'technology', 'sectorDisp': 'Technology',
+ 'longBusinessSummary': 'Microsoft Corporation develops and supports software, services, devices and solutions'
+                        'worldwide. The Productivity and Business Processes segment offers office, exchange,'
+                        'SharePoint, Microsoft Teams, office 365 Security and Compliance, Microsoft viva, and Microsoft'
+                        '365 copilot; and office consumer services, such as Microsoft 365 consumer subscriptions,'
+                        'Office licensed on-premises, and other office services. This segment also provides LinkedIn;'
+                        'and dynamics business solutions, including Dynamics 365, a set of intelligent, cloud-based'
+                        'applications across ERP, CRM, power apps, and power automate; and on-premises ERP and CRM'
+                        'applications. The Intelligent Cloud segment offers server products and cloud services, such as'
+                        'azure and other cloud services; SQL and windows server, visual studio, system center, and'
+                        'related client access licenses, as well as nuance and GitHub; and enterprise services'
+                        'including enterprise support services, industry solutions, and nuance professional services.'
+                        'The More Personal Computing segment offers Windows, including windows OEM licensing and other'
+                        'non-volume licensing of the Windows operating system; Windows commercial comprising volume'
+                        'licensing of the Windows operating system, windows cloud services, and other Windows'
+                        'commercial offerings; patent licensing; and windows Internet of Things; and devices, such as'
+                        'surface, HoloLens, and PC accessories. Additionally, this segment provides gaming, which'
+                        'includes Xbox hardware and content, and first- and third-party content; Xbox game pass and'
+                        'other subscriptions, cloud gaming, advertising, third-party disc royalties, and other cloud'
+                        'services; and search and news advertising, which includes Bing, Microsoft News and Edge, and'
+                        'third-party affiliates. The company sells its products through OEMs, distributors, and'
+                        'resellers; and directly through digital marketplaces, online, and retail stores. The company'
+                        'was founded in 1975 and is headquartered in Redmond, Washington.',
+ 'fullTimeEmployees': 221000,
+ 'companyOfficers': [{'maxAge': 1, 'name': 'Mr. Satya  Nadella', 'age': 56, 'title': 'Chairman & CEO', 'yearBorn': 1967,
+                      'fiscalYear': 2023, 'totalPay': 9276400, 'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. Bradford L. Smith LCA', 'age': 64, 'title': 'President & Vice Chairman',
+                      'yearBorn': 1959, 'fiscalYear': 2023, 'totalPay': 3591277, 'exercisedValue': 0,
+                      'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Ms. Amy E. Hood', 'age': 51, 'title': 'Executive VP & CFO',
+                      'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 3452196, 'exercisedValue': 0,
+                      'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. Judson B. Althoff', 'age': 49,
+                      'title': 'Executive VP & Chief Commercial Officer', 'yearBorn': 1974, 'fiscalYear': 2023,
+                      'totalPay': 3355797, 'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. Christopher David Young', 'age': 51,
+                      'title': 'Executive Vice President of Business Development, Strategy & Ventures',
+                      'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 2460507, 'exercisedValue': 0,
+                      'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Ms. Alice L. Jolla', 'age': 56,
+                      'title': 'Corporate VP & Chief Accounting Officer', 'yearBorn': 1967, 'fiscalYear': 2023,
+                      'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. James Kevin Scott', 'age': 51, 'title': 'Executive VP of AI & CTO',
+                      'yearBorn': 1972, 'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Brett  Iversen', 'title': 'Vice President of Investor Relations',
+                      'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. Hossein  Nowbar', 'title': 'Chief Legal Officer', 'fiscalYear': 2023,
+                      'exercisedValue': 0, 'unexercisedValue': 0},
+                     {'maxAge': 1, 'name': 'Mr. Frank X. Shaw', 'title': 'Chief Communications Officer',
+                      'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0}],
+ 'auditRisk': 6, 'boardRisk': 3, 'compensationRisk': 3, 'shareHolderRightsRisk': 2, 'overallRisk': 2,
+ 'governanceEpochDate': 1711670400, 'compensationAsOfEpochDate': 1703980800, 'maxAge': 86400, 'priceHint': 2,
+ 'previousClose': 421.43, 'open': 421.05, 'dayLow': 419.14, 'dayHigh': 421.87, 'regularMarketPreviousClose': 421.43,
+ 'regularMarketOpen': 421.05, 'regularMarketDayLow': 419.14, 'regularMarketDayHigh': 421.87, 'dividendRate': 3.0,
+ 'dividendYield': 0.0070999996, 'exDividendDate': 1715731200, 'payoutRatio': 0.2523, 'fiveYearAvgDividendYield': 0.95,
+ 'beta': 0.89, 'trailingPE': 38.039783, 'forwardPE': 34.01132, 'volume': 21871161, 'regularMarketVolume': 21871161,
+ 'averageVolume': 22936715, 'averageVolume10days': 18901212, 'averageDailyVolume10Day': 18901212,
+ 'marketCap': 3126134571008, 'fiftyTwoWeekLow': 275.37, 'fiftyTwoWeekHigh': 430.82,
+ 'priceToSalesTrailing12Months': 13.736239, 'fiftyDayAverage': 411.2622, 'twoHundredDayAverage': 363.093,
+ 'trailingAnnualDividendRate': 2.86, 'trailingAnnualDividendYield': 0.0067864177, 'currency': 'USD',
+ 'enterpriseValue': 3156509196288, 'profitMargins': 0.36269, 'floatShares': 7418919053, 'sharesOutstanding': 7430439936,
+ 'sharesShort': 54210656, 'sharesShortPriorMonth': 42451775, 'sharesShortPreviousMonthDate': 1707955200,
+ 'dateShortInterest': 1710460800, 'sharesPercentSharesOut': 0.0073, 'heldPercentInsiders': 0.00054000004,
+ 'heldPercentInstitutions': 0.73861, 'shortRatio': 2.46, 'shortPercentOfFloat': 0.0073,
+ 'impliedSharesOutstanding': 7430439936, 'bookValue': 32.06, 'priceToBook': 13.122894, 'lastFiscalYearEnd': 1688083200,
+ 'nextFiscalYearEnd': 1719705600, 'mostRecentQuarter': 1703980800, 'earningsQuarterlyGrowth': 0.332,
+ 'netIncomeToCommon': 82541002752, 'trailingEps': 11.06, 'forwardEps': 12.37, 'pegRatio': 2.59,
+ 'lastSplitFactor': '2:1', 'lastSplitDate': 1045526400, 'enterpriseToRevenue': 13.87, 'enterpriseToEbitda': 26.654,
+ '52WeekChange': 0.46474946, 'SandP52WeekChange': 0.27393317, 'lastDividendValue': 0.75, 'lastDividendDate': 1707868800,
+ 'exchange': 'NMS', 'quoteType': 'EQUITY', 'symbol': 'MSFT', 'underlyingSymbol': 'MSFT',
+ 'shortName': 'Microsoft Corporation', 'longName': 'Microsoft Corporation', 'firstTradeDateEpochUtc': 511108200,
+ 'timeZoneFullName': 'America/New_York', 'timeZoneShortName': 'EDT', 'uuid': 'b004b3ec-de24-385e-b2c1-923f10d3fb62',
+ 'messageBoardId': 'finmb_21835', 'gmtOffSetMilliseconds': -14400000, 'currentPrice': 420.72, 'targetHighPrice': 505.89,
+ 'targetLowPrice': 275.98, 'targetMeanPrice': 425.08, 'targetMedianPrice': 427.72, 'recommendationMean': 1.7,
+ 'recommendationKey': 'buy', 'numberOfAnalystOpinions': 48, 'totalCash': 80981999616, 'totalCashPerShare': 10.899,
+ 'ebitda': 118427000832, 'totalDebt': 111358001152, 'quickRatio': 1.096, 'currentRatio': 1.218,
+ 'totalRevenue': 227583000576, 'debtToEquity': 46.736, 'revenuePerShare': 30.612, 'returnOnAssets': 0.1519,
+ 'returnOnEquity': 0.39174, 'freeCashflow': 58680999936, 'operatingCashflow': 102646996992, 'earningsGrowth': 0.332,
+ 'revenueGrowth': 0.176, 'grossMargins': 0.69815004, 'ebitdaMargins': 0.52037, 'operatingMargins': 0.43585998,
+ 'financialCurrency': 'USD', 'trailingPegRatio': 2.1338}

@@ -5,8 +5,8 @@
   * [Functionality](#functionality)
     * [Daily Schedule](#daily-schedule)
   * [Data files](#data-files)
-    * [current_positionsYYYYMMDDHHMM.csv](#currentpositionsyyyymmddhhmmcsv)
-    * [transactionsYYYYMMDDHHMM.csv](#transactionsyyyymmddhhmmcsv)
+    * [current_positions_YYYYMMDDHHMM.csv](#currentpositionsyyyymmddhhmmcsv)
+    * [transactions_YYYYMMDDHHMM.csv](#transactionsyyyymmddhhmmcsv)
   * [Class](#class)
     * [Stock Class](#stock-class)
       * [Variables](#variables)
@@ -27,8 +27,7 @@ positions as well as a list of all transactions.
 Ensure that you are in the main directory and
 run the following:
 
-_This must be done before you can run the application
-if you are not using the included venv._
+_This must be done before you can run the application._
 
 ```shell
 $ pip install -r requirements.txt
@@ -87,7 +86,7 @@ as this is how the program reminds itself of past
 variables in case the execution was interrupted.
 
 ## Data files
-### current_positionsYYYYMMDDHHMM.csv
+### current_positions_YYYYMMDDHHMM.csv
 The file contains data on stocks currently in your
 portfolio, in alphabetical order with Cash at the
 beginning, in the following format:
@@ -100,7 +99,7 @@ beginning, in the following format:
 | AKAM | 6.8164  | 748.31    |
 | CBOE | 80.2936 | 14589.35  |
 
-### transactionsYYYYMMDDHHMM.csv
+### transactions_YYYYMMDDHHMM.csv
 The file contains the transaction data sorted in order of
 transactions date, the alphabetized by ticker symbol, in
 the following format:
