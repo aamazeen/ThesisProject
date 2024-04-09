@@ -773,86 +773,88 @@ stock_tickers = [
 # print(round_up(-3.14159265358979, 0))
 
 # noinspection PyStatementEffect
-{'address1': 'One Microsoft Way', 'city': 'Redmond', 'state': 'WA', 'zip': '98052-6399', 'country': 'United States',
- 'phone': '425 882 8080', 'website': 'https://www.microsoft.com', 'industry': 'Software - Infrastructure',
- 'industryKey': 'software-infrastructure', 'industryDisp': 'Software - Infrastructure', 'sector': 'Technology',
- 'sectorKey': 'technology', 'sectorDisp': 'Technology',
- 'longBusinessSummary': 'Microsoft Corporation develops and supports software, services, devices and solutions'
-                        'worldwide. The Productivity and Business Processes segment offers office, exchange,'
-                        'SharePoint, Microsoft Teams, office 365 Security and Compliance, Microsoft viva, and Microsoft'
-                        '365 copilot; and office consumer services, such as Microsoft 365 consumer subscriptions,'
-                        'Office licensed on-premises, and other office services. This segment also provides LinkedIn;'
-                        'and dynamics business solutions, including Dynamics 365, a set of intelligent, cloud-based'
-                        'applications across ERP, CRM, power apps, and power automate; and on-premises ERP and CRM'
-                        'applications. The Intelligent Cloud segment offers server products and cloud services, such as'
-                        'azure and other cloud services; SQL and windows server, visual studio, system center, and'
-                        'related client access licenses, as well as nuance and GitHub; and enterprise services'
-                        'including enterprise support services, industry solutions, and nuance professional services.'
-                        'The More Personal Computing segment offers Windows, including windows OEM licensing and other'
-                        'non-volume licensing of the Windows operating system; Windows commercial comprising volume'
-                        'licensing of the Windows operating system, windows cloud services, and other Windows'
-                        'commercial offerings; patent licensing; and windows Internet of Things; and devices, such as'
-                        'surface, HoloLens, and PC accessories. Additionally, this segment provides gaming, which'
-                        'includes Xbox hardware and content, and first- and third-party content; Xbox game pass and'
-                        'other subscriptions, cloud gaming, advertising, third-party disc royalties, and other cloud'
-                        'services; and search and news advertising, which includes Bing, Microsoft News and Edge, and'
-                        'third-party affiliates. The company sells its products through OEMs, distributors, and'
-                        'resellers; and directly through digital marketplaces, online, and retail stores. The company'
-                        'was founded in 1975 and is headquartered in Redmond, Washington.',
- 'fullTimeEmployees': 221000,
- 'companyOfficers': [{'maxAge': 1, 'name': 'Mr. Satya  Nadella', 'age': 56, 'title': 'Chairman & CEO', 'yearBorn': 1967,
-                      'fiscalYear': 2023, 'totalPay': 9276400, 'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. Bradford L. Smith LCA', 'age': 64, 'title': 'President & Vice Chairman',
-                      'yearBorn': 1959, 'fiscalYear': 2023, 'totalPay': 3591277, 'exercisedValue': 0,
-                      'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Ms. Amy E. Hood', 'age': 51, 'title': 'Executive VP & CFO',
-                      'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 3452196, 'exercisedValue': 0,
-                      'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. Judson B. Althoff', 'age': 49,
-                      'title': 'Executive VP & Chief Commercial Officer', 'yearBorn': 1974, 'fiscalYear': 2023,
-                      'totalPay': 3355797, 'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. Christopher David Young', 'age': 51,
-                      'title': 'Executive Vice President of Business Development, Strategy & Ventures',
-                      'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 2460507, 'exercisedValue': 0,
-                      'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Ms. Alice L. Jolla', 'age': 56,
-                      'title': 'Corporate VP & Chief Accounting Officer', 'yearBorn': 1967, 'fiscalYear': 2023,
-                      'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. James Kevin Scott', 'age': 51, 'title': 'Executive VP of AI & CTO',
-                      'yearBorn': 1972, 'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Brett  Iversen', 'title': 'Vice President of Investor Relations',
-                      'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. Hossein  Nowbar', 'title': 'Chief Legal Officer', 'fiscalYear': 2023,
-                      'exercisedValue': 0, 'unexercisedValue': 0},
-                     {'maxAge': 1, 'name': 'Mr. Frank X. Shaw', 'title': 'Chief Communications Officer',
-                      'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0}],
- 'auditRisk': 6, 'boardRisk': 3, 'compensationRisk': 3, 'shareHolderRightsRisk': 2, 'overallRisk': 2,
- 'governanceEpochDate': 1711670400, 'compensationAsOfEpochDate': 1703980800, 'maxAge': 86400, 'priceHint': 2,
- 'previousClose': 421.43, 'open': 421.05, 'dayLow': 419.14, 'dayHigh': 421.87, 'regularMarketPreviousClose': 421.43,
- 'regularMarketOpen': 421.05, 'regularMarketDayLow': 419.14, 'regularMarketDayHigh': 421.87, 'dividendRate': 3.0,
- 'dividendYield': 0.0070999996, 'exDividendDate': 1715731200, 'payoutRatio': 0.2523, 'fiveYearAvgDividendYield': 0.95,
- 'beta': 0.89, 'trailingPE': 38.039783, 'forwardPE': 34.01132, 'volume': 21871161, 'regularMarketVolume': 21871161,
- 'averageVolume': 22936715, 'averageVolume10days': 18901212, 'averageDailyVolume10Day': 18901212,
- 'marketCap': 3126134571008, 'fiftyTwoWeekLow': 275.37, 'fiftyTwoWeekHigh': 430.82,
- 'priceToSalesTrailing12Months': 13.736239, 'fiftyDayAverage': 411.2622, 'twoHundredDayAverage': 363.093,
- 'trailingAnnualDividendRate': 2.86, 'trailingAnnualDividendYield': 0.0067864177, 'currency': 'USD',
- 'enterpriseValue': 3156509196288, 'profitMargins': 0.36269, 'floatShares': 7418919053, 'sharesOutstanding': 7430439936,
- 'sharesShort': 54210656, 'sharesShortPriorMonth': 42451775, 'sharesShortPreviousMonthDate': 1707955200,
- 'dateShortInterest': 1710460800, 'sharesPercentSharesOut': 0.0073, 'heldPercentInsiders': 0.00054000004,
- 'heldPercentInstitutions': 0.73861, 'shortRatio': 2.46, 'shortPercentOfFloat': 0.0073,
- 'impliedSharesOutstanding': 7430439936, 'bookValue': 32.06, 'priceToBook': 13.122894, 'lastFiscalYearEnd': 1688083200,
- 'nextFiscalYearEnd': 1719705600, 'mostRecentQuarter': 1703980800, 'earningsQuarterlyGrowth': 0.332,
- 'netIncomeToCommon': 82541002752, 'trailingEps': 11.06, 'forwardEps': 12.37, 'pegRatio': 2.59,
- 'lastSplitFactor': '2:1', 'lastSplitDate': 1045526400, 'enterpriseToRevenue': 13.87, 'enterpriseToEbitda': 26.654,
- '52WeekChange': 0.46474946, 'SandP52WeekChange': 0.27393317, 'lastDividendValue': 0.75, 'lastDividendDate': 1707868800,
- 'exchange': 'NMS', 'quoteType': 'EQUITY', 'symbol': 'MSFT', 'underlyingSymbol': 'MSFT',
- 'shortName': 'Microsoft Corporation', 'longName': 'Microsoft Corporation', 'firstTradeDateEpochUtc': 511108200,
- 'timeZoneFullName': 'America/New_York', 'timeZoneShortName': 'EDT', 'uuid': 'b004b3ec-de24-385e-b2c1-923f10d3fb62',
- 'messageBoardId': 'finmb_21835', 'gmtOffSetMilliseconds': -14400000, 'currentPrice': 420.72, 'targetHighPrice': 505.89,
- 'targetLowPrice': 275.98, 'targetMeanPrice': 425.08, 'targetMedianPrice': 427.72, 'recommendationMean': 1.7,
- 'recommendationKey': 'buy', 'numberOfAnalystOpinions': 48, 'totalCash': 80981999616, 'totalCashPerShare': 10.899,
- 'ebitda': 118427000832, 'totalDebt': 111358001152, 'quickRatio': 1.096, 'currentRatio': 1.218,
- 'totalRevenue': 227583000576, 'debtToEquity': 46.736, 'revenuePerShare': 30.612, 'returnOnAssets': 0.1519,
- 'returnOnEquity': 0.39174, 'freeCashflow': 58680999936, 'operatingCashflow': 102646996992, 'earningsGrowth': 0.332,
- 'revenueGrowth': 0.176, 'grossMargins': 0.69815004, 'ebitdaMargins': 0.52037, 'operatingMargins': 0.43585998,
- 'financialCurrency': 'USD', 'trailingPegRatio': 2.1338}
+# {'address1': 'One Microsoft Way', 'city': 'Redmond', 'state': 'WA', 'zip': '98052-6399', 'country': 'United States',
+#  'phone': '425 882 8080', 'website': 'https://www.microsoft.com', 'industry': 'Software - Infrastructure',
+#  'industryKey': 'software-infrastructure', 'industryDisp': 'Software - Infrastructure', 'sector': 'Technology',
+#  'sectorKey': 'technology', 'sectorDisp': 'Technology',
+#  'longBusinessSummary': 'Microsoft Corporation develops and supports software, services, devices and solutions'
+#                         'worldwide. The Productivity and Business Processes segment offers office, exchange,'
+#                         'SharePoint, Microsoft Teams, office 365 Security and Compliance, Microsoft viva, and Microsoft'
+#                         '365 copilot; and office consumer services, such as Microsoft 365 consumer subscriptions,'
+#                         'Office licensed on-premises, and other office services. This segment also provides LinkedIn;'
+#                         'and dynamics business solutions, including Dynamics 365, a set of intelligent, cloud-based'
+#                         'applications across ERP, CRM, power apps, and power automate; and on-premises ERP and CRM'
+#                         'applications. The Intelligent Cloud segment offers server products and cloud services, such as'
+#                         'azure and other cloud services; SQL and windows server, visual studio, system center, and'
+#                         'related client access licenses, as well as nuance and GitHub; and enterprise services'
+#                         'including enterprise support services, industry solutions, and nuance professional services.'
+#                         'The More Personal Computing segment offers Windows, including windows OEM licensing and other'
+#                         'non-volume licensing of the Windows operating system; Windows commercial comprising volume'
+#                         'licensing of the Windows operating system, windows cloud services, and other Windows'
+#                         'commercial offerings; patent licensing; and windows Internet of Things; and devices, such as'
+#                         'surface, HoloLens, and PC accessories. Additionally, this segment provides gaming, which'
+#                         'includes Xbox hardware and content, and first- and third-party content; Xbox game pass and'
+#                         'other subscriptions, cloud gaming, advertising, third-party disc royalties, and other cloud'
+#                         'services; and search and news advertising, which includes Bing, Microsoft News and Edge, and'
+#                         'third-party affiliates. The company sells its products through OEMs, distributors, and'
+#                         'resellers; and directly through digital marketplaces, online, and retail stores. The company'
+#                         'was founded in 1975 and is headquartered in Redmond, Washington.',
+#  'fullTimeEmployees': 221000,
+#  'companyOfficers': [{'maxAge': 1, 'name': 'Mr. Satya  Nadella', 'age': 56, 'title': 'Chairman & CEO', 'yearBorn': 1967,
+#                       'fiscalYear': 2023, 'totalPay': 9276400, 'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. Bradford L. Smith LCA', 'age': 64, 'title': 'President & Vice Chairman',
+#                       'yearBorn': 1959, 'fiscalYear': 2023, 'totalPay': 3591277, 'exercisedValue': 0,
+#                       'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Ms. Amy E. Hood', 'age': 51, 'title': 'Executive VP & CFO',
+#                       'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 3452196, 'exercisedValue': 0,
+#                       'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. Judson B. Althoff', 'age': 49,
+#                       'title': 'Executive VP & Chief Commercial Officer', 'yearBorn': 1974, 'fiscalYear': 2023,
+#                       'totalPay': 3355797, 'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. Christopher David Young', 'age': 51,
+#                       'title': 'Executive Vice President of Business Development, Strategy & Ventures',
+#                       'yearBorn': 1972, 'fiscalYear': 2023, 'totalPay': 2460507, 'exercisedValue': 0,
+#                       'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Ms. Alice L. Jolla', 'age': 56,
+#                       'title': 'Corporate VP & Chief Accounting Officer', 'yearBorn': 1967, 'fiscalYear': 2023,
+#                       'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. James Kevin Scott', 'age': 51, 'title': 'Executive VP of AI & CTO',
+#                       'yearBorn': 1972, 'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Brett  Iversen', 'title': 'Vice President of Investor Relations',
+#                       'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. Hossein  Nowbar', 'title': 'Chief Legal Officer', 'fiscalYear': 2023,
+#                       'exercisedValue': 0, 'unexercisedValue': 0},
+#                      {'maxAge': 1, 'name': 'Mr. Frank X. Shaw', 'title': 'Chief Communications Officer',
+#                       'fiscalYear': 2023, 'exercisedValue': 0, 'unexercisedValue': 0}],
+#  'auditRisk': 6, 'boardRisk': 3, 'compensationRisk': 3, 'shareHolderRightsRisk': 2, 'overallRisk': 2,
+#  'governanceEpochDate': 1711670400, 'compensationAsOfEpochDate': 1703980800, 'maxAge': 86400, 'priceHint': 2,
+#  'previousClose': 421.43, 'open': 421.05, 'dayLow': 419.14, 'dayHigh': 421.87, 'regularMarketPreviousClose': 421.43,
+#  'regularMarketOpen': 421.05, 'regularMarketDayLow': 419.14, 'regularMarketDayHigh': 421.87, 'dividendRate': 3.0,
+#  'dividendYield': 0.0070999996, 'exDividendDate': 1715731200, 'payoutRatio': 0.2523, 'fiveYearAvgDividendYield': 0.95,
+#  'beta': 0.89, 'trailingPE': 38.039783, 'forwardPE': 34.01132, 'volume': 21871161, 'regularMarketVolume': 21871161,
+#  'averageVolume': 22936715, 'averageVolume10days': 18901212, 'averageDailyVolume10Day': 18901212,
+#  'marketCap': 3126134571008, 'fiftyTwoWeekLow': 275.37, 'fiftyTwoWeekHigh': 430.82,
+#  'priceToSalesTrailing12Months': 13.736239, 'fiftyDayAverage': 411.2622, 'twoHundredDayAverage': 363.093,
+#  'trailingAnnualDividendRate': 2.86, 'trailingAnnualDividendYield': 0.0067864177, 'currency': 'USD',
+#  'enterpriseValue': 3156509196288, 'profitMargins': 0.36269, 'floatShares': 7418919053, 'sharesOutstanding': 7430439936,
+#  'sharesShort': 54210656, 'sharesShortPriorMonth': 42451775, 'sharesShortPreviousMonthDate': 1707955200,
+#  'dateShortInterest': 1710460800, 'sharesPercentSharesOut': 0.0073, 'heldPercentInsiders': 0.00054000004,
+#  'heldPercentInstitutions': 0.73861, 'shortRatio': 2.46, 'shortPercentOfFloat': 0.0073,
+#  'impliedSharesOutstanding': 7430439936, 'bookValue': 32.06, 'priceToBook': 13.122894, 'lastFiscalYearEnd': 1688083200,
+#  'nextFiscalYearEnd': 1719705600, 'mostRecentQuarter': 1703980800, 'earningsQuarterlyGrowth': 0.332,
+#  'netIncomeToCommon': 82541002752, 'trailingEps': 11.06, 'forwardEps': 12.37, 'pegRatio': 2.59,
+#  'lastSplitFactor': '2:1', 'lastSplitDate': 1045526400, 'enterpriseToRevenue': 13.87, 'enterpriseToEbitda': 26.654,
+#  '52WeekChange': 0.46474946, 'SandP52WeekChange': 0.27393317, 'lastDividendValue': 0.75, 'lastDividendDate': 1707868800,
+#  'exchange': 'NMS', 'quoteType': 'EQUITY', 'symbol': 'MSFT', 'underlyingSymbol': 'MSFT',
+#  'shortName': 'Microsoft Corporation', 'longName': 'Microsoft Corporation', 'firstTradeDateEpochUtc': 511108200,
+#  'timeZoneFullName': 'America/New_York', 'timeZoneShortName': 'EDT', 'uuid': 'b004b3ec-de24-385e-b2c1-923f10d3fb62',
+#  'messageBoardId': 'finmb_21835', 'gmtOffSetMilliseconds': -14400000, 'currentPrice': 420.72, 'targetHighPrice': 505.89,
+#  'targetLowPrice': 275.98, 'targetMeanPrice': 425.08, 'targetMedianPrice': 427.72, 'recommendationMean': 1.7,
+#  'recommendationKey': 'buy', 'numberOfAnalystOpinions': 48, 'totalCash': 80981999616, 'totalCashPerShare': 10.899,
+#  'ebitda': 118427000832, 'totalDebt': 111358001152, 'quickRatio': 1.096, 'currentRatio': 1.218,
+#  'totalRevenue': 227583000576, 'debtToEquity': 46.736, 'revenuePerShare': 30.612, 'returnOnAssets': 0.1519,
+#  'returnOnEquity': 0.39174, 'freeCashflow': 58680999936, 'operatingCashflow': 102646996992, 'earningsGrowth': 0.332,
+#  'revenueGrowth': 0.176, 'grossMargins': 0.69815004, 'ebitdaMargins': 0.52037, 'operatingMargins': 0.43585998,
+#  'financialCurrency': 'USD', 'trailingPegRatio': 2.1338}
+
+['MSFT', 'AAPL', 'NVDA', 'AMZN', 'GOOG', 'GOOGL', 'META', 'BRK.B', 'LLY', 'AVGO', 'JPM', 'V', 'TSLA', 'WMT', 'XOM', 'MA', 'UNH', 'PG', 'JNJ', 'HD', 'ORCL', 'MRK', 'COST', 'ABBV', 'CVX', 'CRM', 'BAC', 'AMD', 'NFLX', 'KO', 'PEP', 'LIN', 'TMO', 'ADBE', 'DIS', 'ACN', 'WFC', 'CSCO', 'ABT', 'TMUS', 'QCOM', 'CAT', 'DHR', 'VZ', 'INTU', 'IBM', 'AMAT', 'GE', 'INTC', 'CMCSA', 'UBER', 'AXP', 'NOW', 'COP', 'BX', 'TXN', 'MS', 'PFE', 'UNP', 'AMGN', 'PM', 'ISRG', 'SPGI', 'MU', 'NKE', 'RTX', 'SYK', 'GS', 'ETN', 'NEE', 'HON', 'UPS', 'SCHW', 'LRCX', 'T', 'PGR', 'BKNG', 'BLK', 'C', 'ELV', 'PLD', 'DE', 'BA', 'MDT', 'TJX', 'LMT', 'CI', 'VRTX', 'ABNB', 'BMY', 'CB', 'REGN', 'MMC', 'BSX', 'ADP', 'SBUX', 'ADI', 'CVS', 'FI', 'ANET', 'KLAC', 'MDLZ', 'AMT', 'SNPS', 'GILD', 'HCA', 'PANW', 'CDNS', 'SHW', 'WM', 'GD', 'TGT', 'CMG', 'MPC', 'EOG', 'SLB', 'ITW', 'ICE', 'CME', 'ZTS', 'SO', 'EQIX', 'DUK', 'MAR', 'PSX', 'MO', 'PH', 'CL', 'CSX', 'MCK', 'BDX', 'FCX', 'APH', 'PYPL', 'TT', 'TDG', 'CTAS', 'FDX', 'NOC', 'USB', 'EMR', 'ECL', 'PCAR', 'PXD', 'AON', 'PNC', 'NXPI', 'VLO', 'OXY', 'CEG', 'RSG', 'MNST', 'ROP', 'MSI', 'NSC', 'EW', 'SMCI', 'FTNT', 'CPRT', 'COF', 'AZO', 'DXCM', 'HLT', 'APD', 'MET', 'AJG', 'TRV', 'ADSK', 'AIG', 'DHI', 'WELL', 'EL', 'F', 'GM', 'CARR', 'TFC', 'MMM', 'GWW', 'PSA', 'AFL', 'SPG', 'COR', 'ODFL', 'STZ', 'NUE', 'HES', 'WMB', 'URI', 'MCHP', 'ROST', 'OKE', 'NEM', 'LEN', 'O', 'ALL', 'KHC', 'SRE', 'AMP', 'TEL', 'DLR', 'JCI', 'AEP', 'PAYX', 'CCI', 'FAST', 'IQV', 'LULU', 'IDXX', 'MSCI', 'BK', 'CMI', 'KDP', 'KMB', 'A', 'AME', 'DOW', 'FIS', 'PRU', 'KR', 'KMI', 'D', 'GEHC', 'LVS', 'LHX', 'MRNA', 'OTIS', 'HSY', 'GIS', 'CTVA', 'CNC', 'CSGP', 'KVUE', 'CHTR', 'PWR', 'YUM', 'MLM', 'IR', 'HUM', 'SYY', 'EXC', 'HAL', 'IT', 'FANG', 'PCG', 'VMC', 'NDAQ', 'CTSH', 'ACGL', 'DG', 'EA', 'RCL', 'BKR', 'CDW', 'LYB', 'DVN', 'PEG', 'VRSK', 'PPG', 'GPN', 'ADM', 'ROK', 'EFX', 'MPWR', 'DFS', 'DD', 'XYL', 'ED', 'EXR', 'FICO', 'HIG', 'VICI', 'ANSS', 'DAL', 'FTV', 'BIIB', 'ON', 'XEL', 'CBRE', 'WST', 'DLTR', 'HPQ', 'GRMN', 'MTD', 'RMD', 'GLW', 'WTW', 'HWM', 'KEYS', 'EIX', 'TSCO', 'RJF', 'EBAY', 'CAH', 'WAB', 'ZBH', 'TROW', 'TRGP', 'AVB', 'TTWO', 'WEC', 'NVR', 'WY', 'CHD', 'BLDR', 'PHM', 'BRO', 'BF.B', 'DOV', 'FITB', 'LYV', 'ALGN', 'BR', 'WDC', 'HPE', 'AXON', 'EQR', 'STLD', 'SBAC', 'MTB', 'AWK', 'IRM', 'STT', 'DECK', 'DTE', 'HUBB', 'WRB', 'ETR', 'PTC', 'MOH', 'CPAY', 'ROL', 'FE', 'ARE', 'NTAP', 'BAX', 'VLTO', 'ULTA', 'IFF', 'INVH', 'STE', 'CTRA', 'BALL', 'GPC', 'TSN', 'WBD', 'ES', 'ILMN', 'APTV', 'JBHT', 'MKC', 'PPL', 'WAT', 'PFG', 'HBAN', 'TDY', 'K', 'COO', 'AEE', 'CBOE', 'CINF', 'HRL', 'VRSN', 'STX', 'CCL', 'DRI', 'FSLR', 'J', 'TXT', 'RF', 'OMC', 'HOLX', 'IEX', 'CLX', 'CE', 'LH', 'JBL', 'CNP', 'NTRS', 'TYL', 'AVY', 'LDOS', 'CMS', 'ATO', 'VTR', 'EXPE', 'BBY', 'MRO', 'L', 'LUV', 'EXPD', 'MAS', 'SWKS', 'PKG', 'SYF', 'FDS', 'EG', 'WBA', 'TER', 'AKAM', 'EQT', 'CF', 'CFG', 'ENPH', 'SNA', 'NDSN', 'EPAM', 'ESS', 'BG', 'NRG', 'POOL', 'TRMB', 'ZBRA', 'MAA', 'CAG', 'MGM', 'NWSA', 'NWS', 'SWK', 'DGX', 'ALB', 'BEN', 'TAP', 'HST', 'UAL', 'FOX', 'FOXA', 'GEN', 'KEY', 'VTRS', 'PNR', 'LKQ', 'IP', 'AMCR', 'APA', 'DOC', 'CRL', 'CPB', 'AOS', 'KMX', 'AES', 'RVTY', 'WRK', 'LNT', 'KIM', 'SJM', 'INCY', 'JKHY', 'NI', 'WYNN', 'JNPR', 'UDR', 'SOLV', 'EVRG', 'IPG', 'DVA', 'EMN', 'LW', 'ALLE', 'PODD', 'PAYC', 'HII', 'FFIV', 'RL', 'QRVO', 'REG', 'TECH', 'MOS', 'GL', 'UHS', 'CPT', 'CTLT', 'BBWI', 'TFX', 'TPR', 'BXP', 'DAY', 'BIO', 'AIZ', 'HSIC', 'CZR', 'MTCH', 'AAL', 'PNW', 'MKTX', 'CHRW', 'FRT', 'GNRC', 'NCLH', 'RHI', 'BWA', 'HAS', 'MHK', 'ETSY', 'IVZ', 'PARA', 'FMC', 'CMA']
